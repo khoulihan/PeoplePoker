@@ -42,6 +42,7 @@ func _process(delta):
 				_set_flip_h(_facing_left(movement_input))
 				var run : bool = _input.get_run()
 				if !run or !_can_run():
+					_was_running = false
 					self.position += movement_input * self.walk_speed * delta
 					if _facing_front(movement_input):
 						$AnimationPlayer.play("WalkFront")
