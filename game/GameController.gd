@@ -7,13 +7,19 @@ var _player_scene = preload("res://game/human/player/Player.tscn")
 var _player : Player
 var _goal_reached : bool = false
 
+var _fingers : Array = []
+
 var _rescued : int = 0
 
 func _ready():
 	randomize()
 	WindowController.resize_window()
 	WindowController.set_aspect_for_game()
+	_populate_finger_array()
 	spawn_player()
+
+func _populate_finger_array():
+	_fingers = $Fingers.get_children()
 
 func spawn_player():
 	if _player:
@@ -32,25 +38,31 @@ func spawn_player():
 	_player.run_stamina_drain = 50
 	_player.stamina_recharge = 10
 	$YSort.add_child(_player)
-	var camera = $YSort/Camera
-	$YSort.remove_child(camera)
-	_player.add_child(camera)
-	camera.current = true
-	camera.position = Vector2(0,0)
+	#var camera = $YSort/Camera
+	#$YSort.remove_child(camera)
+	#_player.add_child(camera)
+	#camera.current = true
+	#camera.position = Vector2(0,0)
 	_player.configure()
+	$CameraTarget.follow(_player)
+	_reset_all_fingers()
+	connect_player_signals()
 
 func _on_Goal_body_entered(body, which):
 	if body == _player and !_goal_reached:
 		_goal_reached = true
 		if _player.is_alive():
 			_rescued += 1
-		var camera = _player.get_node("Camera")
-		var camera_pos = camera.get_camera_position()
+		$CameraTarget.follow(null)
+		_abandon_all_pursuits()
+		#var camera = _player.get_node("Camera")
+		#var camera_pos = camera.get_camera_position()
 		_player.disable_collider()
+		disconnect_player_signals()
 		$YSort.remove_child(_player)
-		_player.remove_child(camera)
-		$YSort.add_child(camera)
-		camera.position = camera_pos
+		#_player.remove_child(camera)
+		#$YSort.add_child(camera)
+		#camera.position = camera_pos
 		var fall_motion : Vector2 = Vector2(0, 15.0)
 		print(which)
 		if which == "top":
@@ -66,6 +78,38 @@ func _on_Goal_body_entered(body, which):
 		_player.enter_fall_state(fall_motion)
 		$RespawnTimer.start()
 
+func disconnect_player_signals():
+	_player.disconnect("entered_cover", self, "_player_entered_cover")
+	_player.disconnect("exited_cover", self, "_player_exited_cover")
+	_player.disconnect("killed", self, "_player_killed")
+
+func connect_player_signals():
+	_player.connect("entered_cover", self, "_player_entered_cover")
+	_player.connect("exited_cover", self, "_player_exited_cover")
+	_player.connect("killed", self, "_player_killed")
+
+func _player_entered_cover() -> void:
+	_abandon_all_pursuits()
+
+func _abandon_all_pursuits() -> void:
+	for finger in _fingers:
+		finger.abandon()
+
+func _reset_all_fingers() -> void:
+	for finger in _fingers:
+		finger.reset()
+
+func _player_exited_cover() -> void:
+	# TODO: Might want to wait before activating a finger, but for now just doing it straight away
+	var finger = _fingers[randi() % len(_fingers)]
+	print (finger.name)
+	finger.pursue(_player)
+
+func _player_killed() -> void:
+	_abandon_all_pursuits()
+	# TODO: Will not actually want to clear this yet
+	_rescued = 0
+	$RespawnTimer.start()
 
 func _on_RespawnTimer_timeout():
 	spawn_player()

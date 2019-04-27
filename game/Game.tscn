@@ -1,8 +1,17 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://game/GameController.gd" type="Script" id=1]
 [ext_resource path="res://game/EnvironmentTileset.png" type="Texture" id=2]
 [ext_resource path="res://game/cover/CoverObject.tscn" type="PackedScene" id=3]
+[ext_resource path="res://game/CameraTarget.gd" type="Script" id=4]
+[ext_resource path="res://game/human/HumanSpritesheetx32.png" type="Texture" id=5]
+[ext_resource path="res://game/Test.gd" type="Script" id=6]
+[ext_resource path="res://game/Fingers.gd" type="Script" id=7]
+[ext_resource path="res://game/finger/Finger.tscn" type="PackedScene" id=8]
+[ext_resource path="res://game/finger/ReverseHorizontalFinger.tscn" type="PackedScene" id=9]
+[ext_resource path="res://game/finger/VerticalFinger.tscn" type="PackedScene" id=10]
+[ext_resource path="res://game/finger/ReverseVerticalFinger.tscn" type="PackedScene" id=11]
+[ext_resource path="res://game/finger/Finger.gd" type="Script" id=12]
 
 [sub_resource type="TileSet" id=1]
 0/name = "BasicFloor"
@@ -43,30 +52,36 @@ tile_data = PoolIntArray( 65534, 0, 0, 65535, 0, 0, 0, 0, 0, 1, 0, 0, 2, 0, 0, 3
 [node name="YSort" type="YSort" parent="."]
 editor/display_folded = true
 
-[node name="Camera" type="Camera2D" parent="YSort"]
-position = Vector2( 300, 240 )
-current = true
-
 [node name="CoverObject" parent="YSort" instance=ExtResource( 3 )]
 position = Vector2( 450, 180 )
 
 [node name="CoverObject2" parent="YSort" instance=ExtResource( 3 )]
 position = Vector2( 150, 400 )
 
+[node name="CoverObject3" parent="YSort" instance=ExtResource( 3 )]
+position = Vector2( 297, 273 )
+
+[node name="CameraTarget" type="Node2D" parent="."]
+position = Vector2( 304, 246 )
+script = ExtResource( 4 )
+
+[node name="Camera" type="Camera2D" parent="CameraTarget"]
+current = true
+
 [node name="SpawnPoints" type="Node2D" parent="."]
 editor/display_folded = true
 
 [node name="Spawn01" type="Position2D" parent="SpawnPoints"]
-position = Vector2( 240, 292 )
+position = Vector2( 257, 280 )
 
 [node name="Spawn02" type="Position2D" parent="SpawnPoints"]
-position = Vector2( 360, 290 )
+position = Vector2( 340, 281 )
 
 [node name="Spawn03" type="Position2D" parent="SpawnPoints"]
-position = Vector2( 360, 200 )
+position = Vector2( 353, 232 )
 
 [node name="Spawn04" type="Position2D" parent="SpawnPoints"]
-position = Vector2( 240, 200 )
+position = Vector2( 241, 229 )
 
 [node name="Goals" type="Node2D" parent="."]
 editor/display_folded = true
@@ -98,6 +113,39 @@ shape = SubResource( 5 )
 [node name="RespawnTimer" type="Timer" parent="."]
 wait_time = 3.0
 one_shot = true
+
+[node name="Test" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 5 )
+vframes = 20
+hframes = 20
+script = ExtResource( 6 )
+target = NodePath("../CameraTarget/Camera")
+
+[node name="Fingers" type="Node2D" parent="."]
+position = Vector2( 304, 246 )
+script = ExtResource( 7 )
+target = NodePath("../CameraTarget/Camera")
+
+[node name="Finger" parent="Fingers" instance=ExtResource( 8 )]
+position = Vector2( -215, 5 )
+
+[node name="Finger2" parent="Fingers" instance=ExtResource( 9 )]
+position = Vector2( 223, 3 )
+
+[node name="Finger3" parent="Fingers" instance=ExtResource( 10 )]
+position = Vector2( -65, 137 )
+
+[node name="Finger4" parent="Fingers" instance=ExtResource( 10 )]
+position = Vector2( 68, 138 )
+
+[node name="Finger5" parent="Fingers" instance=ExtResource( 11 )]
+position = Vector2( -68, -150 )
+script = ExtResource( 12 )
+
+[node name="Finger6" parent="Fingers" instance=ExtResource( 11 )]
+position = Vector2( 63, -149 )
+script = ExtResource( 12 )
 
 [connection signal="body_entered" from="Goals/TopGoal" to="." method="_on_Goal_body_entered" binds= [ "top" ]]
 [connection signal="body_entered" from="Goals/BottomGoal" to="." method="_on_Goal_body_entered" binds= [ "bottom" ]]

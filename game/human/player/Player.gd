@@ -7,6 +7,10 @@ export(float) var roll_speed
 export(float) var run_stamina_drain
 export(float) var stamina_recharge
 
+signal entered_cover
+signal exited_cover
+signal killed
+
 var _alive : bool = true
 var _stamina : float
 
@@ -14,7 +18,7 @@ var _last_movement : Vector2
 var _was_running : bool
 var _roll_vector : Vector2
 var _rolling : bool
-var _in_cover : bool
+var _in_cover : bool = true
 var _falling : bool
 var _fall_motion : Vector2
 
@@ -23,6 +27,7 @@ onready var _input : InputController = $InputController
 func _ready():
 	_stamina = max_stamina
 
+# TODO: The movement stuff should maybe be in physics_process...
 func _process(delta):
 	var recharge_stamina = true
 	if _alive and !_falling:
@@ -111,11 +116,13 @@ func _set_flip_h(f) -> void:
 	$Male.flip_h = f
 	$Female.flip_h = f
 
-func entered_cover() -> void:
+func enter_cover() -> void:
 	_in_cover = true
+	emit_signal("entered_cover")
 
-func exited_cover() -> void:
+func exit_cover() -> void:
 	_in_cover = false
+	emit_signal("exited_cover")
 
 func disable_collider() -> void:
 	$CollisionShape2D.disabled = true
@@ -123,3 +130,11 @@ func disable_collider() -> void:
 func enter_fall_state(fall_motion) -> void:
 	_falling = true
 	_fall_motion = fall_motion
+
+func position_prediction() -> Vector2:
+	return self.position + (self._last_movement * run_speed * 0.5)
+
+func kill():
+	_alive = false
+	$AnimationPlayer.play("Death")
+	emit_signal("killed")
