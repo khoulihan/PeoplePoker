@@ -14,6 +14,9 @@ var _last_movement : Vector2
 var _was_running : bool
 var _roll_vector : Vector2
 var _rolling : bool
+var _in_cover : bool
+var _falling : bool
+var _fall_motion : Vector2
 
 onready var _input : InputController = $InputController
 
@@ -22,7 +25,8 @@ func _ready():
 
 func _process(delta):
 	var recharge_stamina = true
-	if _alive:
+	if _alive and !_falling:
+		var requested_movement : Vector2 = Vector2(0,0)
 		var movement_input = _input.get_movement()
 		if movement_input.length_squared() > 0.2:
 			if !_rolling:
@@ -43,7 +47,7 @@ func _process(delta):
 				var run : bool = _input.get_run()
 				if !run or !_can_run():
 					_was_running = false
-					self.position += movement_input * self.walk_speed * delta
+					requested_movement = movement_input * self.walk_speed
 					if _facing_front(movement_input):
 						$AnimationPlayer.play("WalkFront")
 					else:
@@ -52,7 +56,7 @@ func _process(delta):
 					recharge_stamina = false
 					_was_running = true
 					_stamina -= run_stamina_drain * delta
-					self.position += movement_input * self.run_speed * delta
+					requested_movement = movement_input * self.run_speed
 					if _facing_front(movement_input):
 						$AnimationPlayer.play("RunFront")
 					else:
@@ -65,19 +69,31 @@ func _process(delta):
 				_set_flip_h(_facing_left(_last_movement))
 				# TODO: This will have to vary based on cover state
 				# NOTE: I believe this will not restart currently running animations, if it does, then... problems
-				if _facing_front(_last_movement):
-					$AnimationPlayer.play("IdleOpenFront")
-				else:
-					$AnimationPlayer.play("IdleOpenBack")
+				$AnimationPlayer.play(_idle_animation(_last_movement))
 		
 		if _rolling:
 			recharge_stamina = false
-			self.position += _roll_vector * self.roll_speed * delta
+			requested_movement = _roll_vector * self.roll_speed
+		
+		# Action the movement
+		var actual_movement : Vector2 = self.move_and_slide(requested_movement)
 		
 		if recharge_stamina:
 			_stamina += stamina_recharge * delta
 			if _stamina > max_stamina:
 				_stamina = max_stamina
+	elif _falling:
+		_fall_motion.y += 10.0
+		self.position += _fall_motion * delta
+
+func is_alive() -> bool:
+	return _alive
+
+func _idle_animation(movement) -> String:
+	if _facing_front(movement):
+		return "IdleCoverFront" if _in_cover else "IdleOpenFront"
+	else:
+		return "IdleCoverBack" if _in_cover else "IdleOpenBack"
 
 func _can_run() -> bool:
 	if _was_running and _stamina > 0.0:
@@ -94,3 +110,16 @@ func _facing_front(movement) -> bool:
 func _set_flip_h(f) -> void:
 	$Male.flip_h = f
 	$Female.flip_h = f
+
+func entered_cover() -> void:
+	_in_cover = true
+
+func exited_cover() -> void:
+	_in_cover = false
+
+func disable_collider() -> void:
+	$CollisionShape2D.disabled = true
+
+func enter_fall_state(fall_motion) -> void:
+	_falling = true
+	_fall_motion = fall_motion
