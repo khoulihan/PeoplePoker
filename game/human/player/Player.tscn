@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://game/human/Human.tscn" type="PackedScene" id=1]
+[ext_resource path="res://game/human/player/Player.gd" type="Script" id=2]
+[ext_resource path="res://game/human/player/InputController.gd" type="Script" id=3]
+
+[node name="Human" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+sex = 1
+walk_speed = 10.0
+run_speed = 20.0
+max_stamina = 100.0
+
+[node name="InputController" type="Node" parent="." index="5"]
+script = ExtResource( 3 )
+
