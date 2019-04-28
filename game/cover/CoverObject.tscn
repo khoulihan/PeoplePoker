@@ -4,7 +4,7 @@
 [ext_resource path="res://game/cover/CoverObjects.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 50, 28 )
+extents = Vector2( 46, 22 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 64, 41 )
@@ -22,7 +22,7 @@ hframes = 10
 [node name="KinematicBody2D" type="KinematicBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
-position = Vector2( 1, -25 )
+position = Vector2( 1, -19 )
 shape = SubResource( 1 )
 
 [node name="CoverArea" type="Area2D" parent="."]

@@ -130,6 +130,10 @@ func disable_collider() -> void:
 func enter_fall_state(fall_motion) -> void:
 	_falling = true
 	_fall_motion = fall_motion
+	if _last_movement.y < 0:
+		$AnimationPlayer.play("JumpBack")
+	else:
+		$AnimationPlayer.play("JumpFront")
 
 func position_prediction() -> Vector2:
 	return self.position + (self._last_movement * run_speed * 0.5)
