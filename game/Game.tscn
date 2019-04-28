@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://game/GameController.gd" type="Script" id=1]
 [ext_resource path="res://music/PeoplePokerTechno.wav" type="AudioStream" id=2]
@@ -19,6 +19,7 @@
 [ext_resource path="res://game/finger/ReverseHorizontalFinger.tscn" type="PackedScene" id=17]
 [ext_resource path="res://game/finger/VerticalFinger.tscn" type="PackedScene" id=18]
 [ext_resource path="res://game/finger/ReverseVerticalFinger.tscn" type="PackedScene" id=19]
+[ext_resource path="res://game/ui/HUD.tscn" type="PackedScene" id=20]
 
 [sub_resource type="TileSet" id=1]
 0/name = "BasicFloor"
@@ -122,25 +123,25 @@ __meta__ = {
 editor/display_folded = true
 
 [node name="Spawn01" type="Position2D" parent="SpawnPoints"]
-position = Vector2( 1126, 1041 )
+position = Vector2( 1126, 1033 )
 
 [node name="Spawn02" type="Position2D" parent="SpawnPoints"]
-position = Vector2( 1237, 1037 )
+position = Vector2( 1237, 1029 )
 
 [node name="Spawn03" type="Position2D" parent="SpawnPoints"]
-position = Vector2( 1241, 954 )
+position = Vector2( 1241, 946 )
 
 [node name="Spawn04" type="Position2D" parent="SpawnPoints"]
-position = Vector2( 1121, 953 )
+position = Vector2( 1121, 945 )
 
 [node name="Spawn05" type="Position2D" parent="SpawnPoints"]
-position = Vector2( 1119, 993 )
+position = Vector2( 1119, 985 )
 
 [node name="Spawn06" type="Position2D" parent="SpawnPoints"]
-position = Vector2( 1241, 995 )
+position = Vector2( 1241, 987 )
 
 [node name="Spawn07" type="Position2D" parent="SpawnPoints"]
-position = Vector2( 1181, 1042 )
+position = Vector2( 1181, 1034 )
 
 [node name="YSort" type="YSort" parent="."]
 editor/display_folded = true
@@ -253,7 +254,7 @@ position = Vector2( 2043, 746 )
 position = Vector2( 1482, 299 )
 
 [node name="PenCoverObject2" parent="YSort" instance=ExtResource( 6 )]
-position = Vector2( 1180, 1027 )
+position = Vector2( 1180, 1018 )
 
 [node name="PenCoverObject3" parent="YSort" instance=ExtResource( 6 )]
 position = Vector2( 2027, 793 )
@@ -609,12 +610,12 @@ script = ExtResource( 12 )
 current = true
 
 [node name="Goals" type="Node2D" parent="."]
-editor/display_folded = true
 
 [node name="TopGoal" type="Area2D" parent="Goals"]
 position = Vector2( 1101, -10 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Goals/TopGoal"]
+position = Vector2( 0, -19 )
 shape = SubResource( 2 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Goals/TopGoal"]
@@ -692,6 +693,10 @@ position = Vector2( -68, -150 )
 [node name="Finger6" parent="Fingers" instance=ExtResource( 19 )]
 position = Vector2( 63, -149 )
 
+[node name="HUD" parent="." instance=ExtResource( 20 )]
+
+[connection signal="player_spawned" from="." to="HUD" method="_on_Game_player_spawned"]
+[connection signal="rescued_updated" from="." to="HUD" method="_on_Game_rescued_updated"]
 [connection signal="body_entered" from="Goals/TopGoal" to="." method="_on_Goal_body_entered" binds= [ "top" ]]
 [connection signal="body_entered" from="Goals/BottomGoal" to="." method="_on_Goal_body_entered" binds= [ "bottom" ]]
 [connection signal="body_entered" from="Goals/LeftGoal" to="." method="_on_Goal_body_entered" binds= [ "left" ]]

@@ -91,6 +91,9 @@ func _process(delta):
 		_fall_motion.y += 10.0
 		self.position += _fall_motion * delta
 
+func get_stamina() -> float:
+	return _stamina
+
 func is_alive() -> bool:
 	return _alive
 

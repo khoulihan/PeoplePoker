@@ -2,10 +2,14 @@ extends Node2D
 
 const Player = preload("res://game/human/player/Player.gd")
 
+signal rescued_updated (new_total)
+signal player_spawned (new_player)
+
 var _player_scene = preload("res://game/human/player/Player.tscn")
 
 var _player : Player
 var _goal_reached : bool = false
+var _player_killed : bool = false
 
 var _fingers : Array = []
 
@@ -20,6 +24,10 @@ func _ready():
 	FadeMask.connect("fade_in_complete", self, "_restart_game")
 
 func _restart_game():
+	if _player_killed:
+		_player_killed = false
+		_rescued = 0
+		emit_signal("rescued_updated", _rescued)
 	spawn_player()
 	FadeMask.fade_out()
 
@@ -55,12 +63,14 @@ func spawn_player():
 		human.sex = randi() % 2
 		human.configure()
 	connect_player_signals()
+	emit_signal("player_spawned", _player)
 
 func _on_Goal_body_entered(body, which):
 	if body == _player and !_goal_reached:
 		_goal_reached = true
 		if _player.is_alive():
 			_rescued += 1
+			emit_signal("rescued_updated", _rescued)
 		$CameraTarget.follow(null)
 		_abandon_all_pursuits()
 		#var camera = _player.get_node("Camera")
@@ -115,8 +125,7 @@ func _player_exited_cover() -> void:
 
 func _player_killed() -> void:
 	_abandon_all_pursuits()
-	# TODO: Will not actually want to clear this yet
-	_rescued = 0
+	_player_killed = true
 	$RespawnTimer.start()
 
 func _on_RespawnTimer_timeout():
