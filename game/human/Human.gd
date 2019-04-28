@@ -10,7 +10,8 @@ func _ready():
 
 func configure():
 	var skin = randi() % 3
-
+	
+	# TODO: Duplicating the materials probably only needs to be done the first time
 	if self.sex == 0:
 		$Female.visible = false
 		$Male.visible = true
