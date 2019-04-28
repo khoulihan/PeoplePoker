@@ -21,6 +21,7 @@ config/icon="res://icon.png"
 [autoload]
 
 WindowController="*res://scripts/WindowController.gd"
+FadeMask="*res://fade_mask/FadeMask.tscn"
 
 [display]
 

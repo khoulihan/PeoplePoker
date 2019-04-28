@@ -17,6 +17,11 @@ func _ready():
 	WindowController.set_aspect_for_game()
 	_populate_finger_array()
 	spawn_player()
+	FadeMask.connect("fade_in_complete", self, "_restart_game")
+
+func _restart_game():
+	spawn_player()
+	FadeMask.fade_out()
 
 func _populate_finger_array():
 	_fingers = $Fingers.get_children()
@@ -115,4 +120,4 @@ func _player_killed() -> void:
 	$RespawnTimer.start()
 
 func _on_RespawnTimer_timeout():
-	spawn_player()
+	FadeMask.fade_in()
