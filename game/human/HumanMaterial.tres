@@ -1,0 +1,21 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=2]
+
+[ext_resource path="res://game/human/Human.shader" type="Shader" id=1]
+
+[resource]
+shader = ExtResource( 1 )
+shader_param/skin_type = 1
+shader_param/main_color_0 = Color( 0.721569, 0.596078, 0.411765, 1 )
+shader_param/main_color_1 = Color( 0.435294, 0.266667, 0.290196, 1 )
+shader_param/main_color_2 = Color( 0.819608, 0.784314, 0.705882, 1 )
+shader_param/shadow_color_0 = Color( 0.435294, 0.266667, 0.290196, 1 )
+shader_param/shadow_color_1 = Color( 0.270588, 0.133333, 0.294118, 1 )
+shader_param/shadow_color_2 = Color( 0.721569, 0.596078, 0.411765, 1 )
+shader_param/dark_shadow_color_0 = Color( 0.270588, 0.133333, 0.294118, 1 )
+shader_param/dark_shadow_color_1 = Color( 0.0313726, 0.0627451, 0.168627, 1 )
+shader_param/dark_shadow_color_2 = Color( 0.435294, 0.266667, 0.290196, 1 )
+shader_param/highlight_color_0 = Color( 0.819608, 0.784314, 0.705882, 1 )
+shader_param/highlight_color_1 = Color( 0.819608, 0.784314, 0.705882, 1 )
+shader_param/highlight_color_2 = Color( 1, 1, 1, 1 )
+shader_param/threshold = 0.01
+

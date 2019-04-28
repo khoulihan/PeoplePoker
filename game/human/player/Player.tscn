@@ -1,13 +1,14 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://game/human/player/Player.gd" type="Script" id=1]
-[ext_resource path="res://game/human/HumanSpritesheetx32.png" type="Texture" id=2]
-[ext_resource path="res://game/human/player/InputController.gd" type="Script" id=3]
+[ext_resource path="res://game/human/HumanMaterial.tres" type="Material" id=2]
+[ext_resource path="res://game/human/HumanSpritesheetx32.png" type="Texture" id=3]
+[ext_resource path="res://game/human/player/InputController.gd" type="Script" id=4]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 5.0
 
-[sub_resource type="Animation" id=12]
+[sub_resource type="Animation" id=2]
 resource_name = "Death"
 length = 0.8
 step = 0.2
@@ -36,7 +37,7 @@ tracks/1/keys = {
 "values": [ 50, 51, 52, 53 ]
 }
 
-[sub_resource type="Animation" id=13]
+[sub_resource type="Animation" id=3]
 resource_name = "IdleCoverBack"
 length = 0.8
 loop = true
@@ -66,7 +67,7 @@ tracks/1/keys = {
 "values": [ 140, 141, 142, 143 ]
 }
 
-[sub_resource type="Animation" id=14]
+[sub_resource type="Animation" id=4]
 resource_name = "IdleCoverFront"
 length = 0.8
 loop = true
@@ -96,7 +97,7 @@ tracks/1/keys = {
 "values": [ 120, 121, 122, 123 ]
 }
 
-[sub_resource type="Animation" id=15]
+[sub_resource type="Animation" id=5]
 resource_name = "IdleOpenBack"
 length = 0.8
 loop = true
@@ -126,7 +127,7 @@ tracks/1/keys = {
 "values": [ 60, 61, 62, 63 ]
 }
 
-[sub_resource type="Animation" id=11]
+[sub_resource type="Animation" id=6]
 resource_name = "IdleOpenFront"
 length = 0.8
 loop = true
@@ -156,7 +157,7 @@ tracks/1/keys = {
 "values": [ 40, 41, 42, 43 ]
 }
 
-[sub_resource type="Animation" id=16]
+[sub_resource type="Animation" id=7]
 resource_name = "IdlePenBack"
 length = 0.8
 step = 0.2
@@ -185,7 +186,7 @@ tracks/1/keys = {
 "values": [ 230, 231, 232, 233 ]
 }
 
-[sub_resource type="Animation" id=17]
+[sub_resource type="Animation" id=8]
 resource_name = "IdlePenFront"
 length = 0.8
 step = 0.2
@@ -214,7 +215,7 @@ tracks/1/keys = {
 "values": [ 210, 211, 212, 213 ]
 }
 
-[sub_resource type="Animation" id=18]
+[sub_resource type="Animation" id=9]
 resource_name = "JumpBack"
 length = 0.8
 step = 0.2
@@ -243,7 +244,7 @@ tracks/1/keys = {
 "values": [ 150, 151, 152, 153 ]
 }
 
-[sub_resource type="Animation" id=19]
+[sub_resource type="Animation" id=10]
 resource_name = "JumpFront"
 length = 0.8
 step = 0.2
@@ -272,7 +273,7 @@ tracks/1/keys = {
 "values": [ 130, 131, 132, 133 ]
 }
 
-[sub_resource type="Animation" id=20]
+[sub_resource type="Animation" id=11]
 resource_name = "RollBack"
 length = 0.8
 loop = true
@@ -302,7 +303,7 @@ tracks/1/keys = {
 "values": [ 380, 381, 382, 383 ]
 }
 
-[sub_resource type="Animation" id=21]
+[sub_resource type="Animation" id=12]
 resource_name = "RollFront"
 length = 0.8
 loop = true
@@ -332,7 +333,7 @@ tracks/1/keys = {
 "values": [ 360, 361, 362, 363 ]
 }
 
-[sub_resource type="Animation" id=22]
+[sub_resource type="Animation" id=13]
 resource_name = "RunBack"
 length = 0.8
 loop = true
@@ -362,7 +363,7 @@ tracks/1/keys = {
 "values": [ 300, 301, 302, 303 ]
 }
 
-[sub_resource type="Animation" id=23]
+[sub_resource type="Animation" id=14]
 resource_name = "RunFront"
 length = 0.8
 loop = true
@@ -392,7 +393,7 @@ tracks/1/keys = {
 "values": [ 280, 281, 282, 283 ]
 }
 
-[sub_resource type="Animation" id=24]
+[sub_resource type="Animation" id=15]
 resource_name = "WalkBack"
 length = 0.8
 loop = true
@@ -422,7 +423,7 @@ tracks/1/keys = {
 "values": [ 220, 221, 222, 223 ]
 }
 
-[sub_resource type="Animation" id=25]
+[sub_resource type="Animation" id=16]
 resource_name = "WalkFront"
 length = 0.8
 loop = true
@@ -463,7 +464,8 @@ max_stamina = 100.0
 shape = SubResource( 1 )
 
 [node name="Male" type="Sprite" parent="."]
-texture = ExtResource( 2 )
+material = ExtResource( 2 )
+texture = ExtResource( 3 )
 centered = false
 offset = Vector2( -16, -28 )
 vframes = 20
@@ -471,7 +473,8 @@ hframes = 20
 frame = 170
 
 [node name="Female" type="Sprite" parent="."]
-texture = ExtResource( 2 )
+material = ExtResource( 2 )
+texture = ExtResource( 3 )
 centered = false
 offset = Vector2( -16, -28 )
 vframes = 20
@@ -479,24 +482,24 @@ hframes = 20
 frame = 210
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/Death = SubResource( 12 )
-anims/IdleCoverBack = SubResource( 13 )
-anims/IdleCoverFront = SubResource( 14 )
-anims/IdleOpenBack = SubResource( 15 )
-anims/IdleOpenFront = SubResource( 11 )
-anims/IdlePenBack = SubResource( 16 )
-anims/IdlePenFront = SubResource( 17 )
-anims/JumpBack = SubResource( 18 )
-anims/JumpFront = SubResource( 19 )
-anims/RollBack = SubResource( 20 )
-anims/RollFront = SubResource( 21 )
-anims/RunBack = SubResource( 22 )
-anims/RunFront = SubResource( 23 )
-anims/WalkBack = SubResource( 24 )
-anims/WalkFront = SubResource( 25 )
+anims/Death = SubResource( 2 )
+anims/IdleCoverBack = SubResource( 3 )
+anims/IdleCoverFront = SubResource( 4 )
+anims/IdleOpenBack = SubResource( 5 )
+anims/IdleOpenFront = SubResource( 6 )
+anims/IdlePenBack = SubResource( 7 )
+anims/IdlePenFront = SubResource( 8 )
+anims/JumpBack = SubResource( 9 )
+anims/JumpFront = SubResource( 10 )
+anims/RollBack = SubResource( 11 )
+anims/RollFront = SubResource( 12 )
+anims/RunBack = SubResource( 13 )
+anims/RunFront = SubResource( 14 )
+anims/WalkBack = SubResource( 15 )
+anims/WalkFront = SubResource( 16 )
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 
 [node name="InputController" type="Node" parent="."]
-script = ExtResource( 3 )
+script = ExtResource( 4 )
 

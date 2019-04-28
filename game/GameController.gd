@@ -46,6 +46,9 @@ func spawn_player():
 	_player.configure()
 	$CameraTarget.follow(_player)
 	_reset_all_fingers()
+	for human in $YSort/Humans.get_children():
+		human.sex = randi() % 2
+		human.configure()
 	connect_player_signals()
 
 func _on_Goal_body_entered(body, which):
