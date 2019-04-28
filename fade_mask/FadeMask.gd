@@ -15,7 +15,7 @@ func fade_in():
 
 func fade_out():
 	_in = false
-	$Mask/Tween.interpolate_property(self, "color", Color(0.0, 0.0, 0.0, 1.0), Color(0.0, 0.0, 0.0, 0.0), 0.2, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+	$Mask/Tween.interpolate_property($Mask, "color", Color(0.0, 0.0, 0.0, 1.0), Color(0.0, 0.0, 0.0, 0.0), 0.2, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 	$Mask/Tween.start()
 
 
