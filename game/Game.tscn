@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://game/GameController.gd" type="Script" id=1]
 [ext_resource path="res://music/PeoplePokerTechno.wav" type="AudioStream" id=2]
@@ -20,6 +20,7 @@
 [ext_resource path="res://game/finger/VerticalFinger.tscn" type="PackedScene" id=18]
 [ext_resource path="res://game/finger/ReverseVerticalFinger.tscn" type="PackedScene" id=19]
 [ext_resource path="res://game/ui/HUD.tscn" type="PackedScene" id=20]
+[ext_resource path="res://game/goal.wav" type="AudioStream" id=21]
 
 [sub_resource type="TileSet" id=1]
 0/name = "BasicFloor"
@@ -694,6 +695,9 @@ position = Vector2( -68, -150 )
 position = Vector2( 63, -149 )
 
 [node name="HUD" parent="." instance=ExtResource( 20 )]
+
+[node name="GoalSoundPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 21 )
 
 [connection signal="player_spawned" from="." to="HUD" method="_on_Game_player_spawned"]
 [connection signal="rescued_updated" from="." to="HUD" method="_on_Game_rescued_updated"]

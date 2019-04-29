@@ -70,6 +70,7 @@ func _on_Goal_body_entered(body, which):
 		_goal_reached = true
 		if _player.is_alive():
 			_rescued += 1
+			$GoalSoundPlayer.play()
 			emit_signal("rescued_updated", _rescued)
 		$CameraTarget.follow(null)
 		_abandon_all_pursuits()
