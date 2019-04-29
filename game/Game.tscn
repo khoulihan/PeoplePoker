@@ -144,9 +144,9 @@ position = Vector2( 1241, 987 )
 position = Vector2( 1181, 1034 )
 
 [node name="YSort" type="YSort" parent="."]
-editor/display_folded = true
 
 [node name="Humans" type="YSort" parent="YSort"]
+editor/display_folded = true
 
 [node name="Human" parent="YSort/Humans" instance=ExtResource( 5 )]
 position = Vector2( 1150, 973 )
@@ -602,7 +602,6 @@ position = Vector2( 1517, 1000 )
 position = Vector2( 305, 977 )
 
 [node name="CameraTarget" type="Node2D" parent="."]
-editor/display_folded = true
 position = Vector2( 304, 246 )
 script = ExtResource( 12 )
 
@@ -610,6 +609,7 @@ script = ExtResource( 12 )
 current = true
 
 [node name="Goals" type="Node2D" parent="."]
+editor/display_folded = true
 
 [node name="TopGoal" type="Area2D" parent="Goals"]
 position = Vector2( 1101, -10 )

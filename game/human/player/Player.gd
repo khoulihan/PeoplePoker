@@ -81,7 +81,11 @@ func _process(delta):
 			requested_movement = _roll_vector * self.roll_speed
 		
 		# Action the movement
-		var actual_movement : Vector2 = self.move_and_slide(requested_movement)
+		var final_movement = Vector2(
+			ceil(abs(requested_movement.x)) * sign(requested_movement.x),
+			ceil(abs(requested_movement.y)) * sign(requested_movement.y)
+		)
+		var actual_movement : Vector2 = self.move_and_slide(final_movement)
 		
 		if recharge_stamina:
 			_stamina += stamina_recharge * delta

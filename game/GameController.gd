@@ -45,7 +45,7 @@ func spawn_player():
 	_player.sex = randi() % 2
 	# TODO: Maybe vary these with difficulty/progress
 	_player.walk_speed = 100
-	_player.run_speed = 200
+	_player.run_speed = 150
 	_player.max_stamina = 100
 	_player.roll_speed = 300
 	_player.run_stamina_drain = 50
