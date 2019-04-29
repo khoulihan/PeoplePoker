@@ -1,8 +1,8 @@
 [gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://game/human/player/Player.gd" type="Script" id=1]
-[ext_resource path="res://game/human/HumanMaterial.tres" type="Material" id=2]
-[ext_resource path="res://game/human/HumanSpritesheetx32.png" type="Texture" id=3]
+[ext_resource path="res://game/human/HumanSpritesheetx32.png" type="Texture" id=2]
+[ext_resource path="res://game/human/HumanMaterial.tres" type="Material" id=3]
 [ext_resource path="res://game/human/player/InputController.gd" type="Script" id=4]
 
 [sub_resource type="CircleShape2D" id=1]
@@ -463,9 +463,17 @@ max_stamina = 100.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
 
+[node name="Shadow" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+centered = false
+offset = Vector2( -16, -28 )
+vframes = 20
+hframes = 20
+frame = 250
+
 [node name="Male" type="Sprite" parent="."]
-material = ExtResource( 2 )
-texture = ExtResource( 3 )
+material = ExtResource( 3 )
+texture = ExtResource( 2 )
 centered = false
 offset = Vector2( -16, -28 )
 vframes = 20
@@ -473,8 +481,8 @@ hframes = 20
 frame = 10
 
 [node name="Female" type="Sprite" parent="."]
-material = ExtResource( 2 )
-texture = ExtResource( 3 )
+material = ExtResource( 3 )
+texture = ExtResource( 2 )
 centered = false
 offset = Vector2( -16, -28 )
 vframes = 20
