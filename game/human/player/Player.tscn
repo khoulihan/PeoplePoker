@@ -36,6 +36,18 @@ tracks/1/keys = {
 "update": 1,
 "values": [ 50, 51, 53 ]
 }
+tracks/2/type = "value"
+tracks/2/path = NodePath("Shadow:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.15 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
 
 [sub_resource type="Animation" id=3]
 resource_name = "IdleCoverBack"

@@ -3,7 +3,7 @@
 [ext_resource path="res://game/cover/CoverObject.tscn" type="PackedScene" id=1]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
-points = PoolVector2Array( 34.54, -10.17, 7.45, 40.48, -37.43, 38.17, -10.09, -19.28 )
+points = PoolVector2Array( 33.81, -10.17, 6.56, 40.48, -43.59, 38.17, -17.33, -19.28 )
 
 [node name="CardsCoverObject" instance=ExtResource( 1 )]
 
