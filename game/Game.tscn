@@ -698,6 +698,7 @@ position = Vector2( 63, -149 )
 
 [node name="GoalSoundPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 21 )
+bus = "SFX"
 
 [connection signal="player_spawned" from="." to="HUD" method="_on_Game_player_spawned"]
 [connection signal="rescued_updated" from="." to="HUD" method="_on_Game_rescued_updated"]
