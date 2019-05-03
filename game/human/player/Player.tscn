@@ -51,9 +51,9 @@ tracks/2/keys = {
 
 [sub_resource type="Animation" id=3]
 resource_name = "IdleCoverBack"
-length = 0.8
+length = 0.6
 loop = true
-step = 0.2
+step = 0.15
 tracks/0/type = "value"
 tracks/0/path = NodePath("Male:frame")
 tracks/0/interp = 1
@@ -61,7 +61,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"times": PoolRealArray( 0, 0.15, 0.3, 0.45 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 100, 101, 102, 103 ]
@@ -73,7 +73,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"times": PoolRealArray( 0, 0.15, 0.3, 0.45 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 140, 141, 142, 143 ]
@@ -81,9 +81,9 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id=4]
 resource_name = "IdleCoverFront"
-length = 0.8
+length = 0.6
 loop = true
-step = 0.2
+step = 0.15
 tracks/0/type = "value"
 tracks/0/path = NodePath("Male:frame")
 tracks/0/interp = 1
@@ -91,7 +91,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"times": PoolRealArray( 0, 0.15, 0.3, 0.45 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 80, 81, 82, 83 ]
@@ -103,7 +103,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"times": PoolRealArray( 0, 0.15, 0.3, 0.45 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 120, 121, 122, 123 ]
@@ -347,9 +347,9 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id=13]
 resource_name = "RunBack"
-length = 0.8
+length = 0.6
 loop = true
-step = 0.2
+step = 0.15
 tracks/0/type = "value"
 tracks/0/path = NodePath("Male:frame")
 tracks/0/interp = 1
@@ -357,7 +357,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"times": PoolRealArray( 0, 0.15, 0.3, 0.45 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 260, 261, 262, 263 ]
@@ -369,7 +369,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"times": PoolRealArray( 0, 0.15, 0.3, 0.45 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 300, 301, 302, 303 ]
@@ -377,9 +377,9 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id=14]
 resource_name = "RunFront"
-length = 0.8
+length = 0.6
 loop = true
-step = 0.2
+step = 0.15
 tracks/0/type = "value"
 tracks/0/path = NodePath("Male:frame")
 tracks/0/interp = 1
@@ -387,7 +387,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"times": PoolRealArray( 0, 0.15, 0.3, 0.45 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 240, 241, 242, 243 ]
@@ -399,7 +399,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"times": PoolRealArray( 0, 0.15, 0.3, 0.45 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 280, 281, 282, 283 ]
@@ -490,7 +490,7 @@ centered = false
 offset = Vector2( -16, -28 )
 vframes = 20
 hframes = 20
-frame = 163
+frame = 83
 
 [node name="Female" type="Sprite" parent="."]
 material = ExtResource( 3 )
@@ -499,7 +499,7 @@ centered = false
 offset = Vector2( -16, -28 )
 vframes = 20
 hframes = 20
-frame = 203
+frame = 123
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Death = SubResource( 2 )

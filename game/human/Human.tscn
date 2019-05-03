@@ -169,6 +169,7 @@ tracks/1/keys = {
 [sub_resource type="Animation" id=7]
 resource_name = "IdlePenBack"
 length = 0.8
+loop = true
 step = 0.2
 tracks/0/type = "value"
 tracks/0/path = NodePath("Male:frame")
@@ -198,6 +199,7 @@ tracks/1/keys = {
 [sub_resource type="Animation" id=8]
 resource_name = "IdlePenFront"
 length = 0.8
+loop = true
 step = 0.2
 tracks/0/type = "value"
 tracks/0/path = NodePath("Male:frame")
@@ -464,6 +466,12 @@ tracks/1/keys = {
 
 [node name="Human" type="KinematicBody2D"]
 script = ExtResource( 1 )
+phrases = "Run!
+Go go go!
+You can do it!
+Keep moving!
+Don't let them catch you!"
+speak_chance = 600
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
@@ -483,7 +491,7 @@ centered = false
 offset = Vector2( -16, -28 )
 vframes = 20
 hframes = 20
-frame = 12
+frame = 192
 
 [node name="Female" type="Sprite" parent="."]
 material = ExtResource( 3 )
@@ -492,7 +500,7 @@ centered = false
 offset = Vector2( -16, -28 )
 vframes = 20
 hframes = 20
-frame = 52
+frame = 232
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Death = SubResource( 2 )

@@ -6,6 +6,7 @@ signal rescued_updated (new_total)
 signal player_spawned (new_player)
 
 var _player_scene = preload("res://game/human/player/Player.tscn")
+var _speech_bubble_scene = preload("res://game/ui/speech_bubble/SpeechBubble.tscn")
 
 var _player : Player
 var _goal_reached : bool = false
@@ -20,8 +21,28 @@ func _ready():
 	WindowController.resize_window()
 	WindowController.set_aspect_for_game()
 	_populate_finger_array()
+	for human in $YSort/Humans.get_children():
+		human.connect("speak", self, "_human_speak", [human])
 	spawn_player()
 	FadeMask.connect("fade_in_complete", self, "_restart_game")
+
+func _process(delta):
+	for bubble in $SpeechBubbles.get_children():
+		bubble.update_transforms(get_viewport_transform(), get_global_transform())
+
+func _human_speak(speech, human):
+	var bubble = _speech_bubble_scene.instance(PackedScene.GEN_EDIT_STATE_DISABLED)
+	bubble.connect("speech_timed_out", human, "on_speech_timed_out") 
+	bubble.connect("speech_timed_out", self, "_speech_bubble_timed_out", [bubble])
+	
+	#bubble.rect_position = get_viewport_transform() * (get_global_transform() * (human.position +  Vector2(-22.0, -38.0)))
+	bubble.update_transforms(get_viewport_transform(), get_global_transform())
+	$SpeechBubbles.add_child(bubble)
+	bubble.display_speech(speech, 4.0, human.position)
+
+func _speech_bubble_timed_out(bubble):
+	$SpeechBubbles.remove_child(bubble)
+	bubble.queue_free()
 
 func _restart_game():
 	if _player_killed:
@@ -56,12 +77,12 @@ func spawn_player():
 	#_player.add_child(camera)
 	#camera.current = true
 	#camera.position = Vector2(0,0)
-	_player.configure()
+	_player.configure(null)
 	$CameraTarget.follow(_player)
 	_reset_all_fingers()
 	for human in $YSort/Humans.get_children():
 		human.sex = randi() % 2
-		human.configure()
+		human.configure(_player)
 	connect_player_signals()
 	emit_signal("player_spawned", _player)
 
