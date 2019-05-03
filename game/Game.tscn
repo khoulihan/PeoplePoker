@@ -145,7 +145,6 @@ position = Vector2( 1241, 987 )
 position = Vector2( 1181, 1034 )
 
 [node name="YSort" type="YSort" parent="."]
-editor/display_folded = true
 
 [node name="Humans" type="YSort" parent="YSort"]
 
@@ -164,6 +163,7 @@ position = Vector2( 1996, 748 )
 
 [node name="Human31" parent="YSort/Humans" instance=ExtResource( 5 )]
 position = Vector2( 1435, 301 )
+speak = true
 
 [node name="Human2" parent="YSort/Humans" instance=ExtResource( 5 )]
 position = Vector2( 1153, 1006 )
@@ -183,6 +183,7 @@ position = Vector2( 1999, 781 )
 
 [node name="Human25" parent="YSort/Humans" instance=ExtResource( 5 )]
 position = Vector2( 1438, 334 )
+speak = true
 
 [node name="Human3" parent="YSort/Humans" instance=ExtResource( 5 )]
 position = Vector2( 1175, 996 )
@@ -199,6 +200,7 @@ position = Vector2( 2021, 771 )
 
 [node name="Human27" parent="YSort/Humans" instance=ExtResource( 5 )]
 position = Vector2( 1460, 324 )
+speak = true
 
 [node name="Human4" parent="YSort/Humans" instance=ExtResource( 5 )]
 position = Vector2( 1205, 1006 )
@@ -215,6 +217,7 @@ speak = true
 
 [node name="Human28" parent="YSort/Humans" instance=ExtResource( 5 )]
 position = Vector2( 1490, 334 )
+speak = true
 
 [node name="Human5" parent="YSort/Humans" instance=ExtResource( 5 )]
 position = Vector2( 1215, 986 )
@@ -227,6 +230,7 @@ position = Vector2( 2061, 761 )
 
 [node name="Human29" parent="YSort/Humans" instance=ExtResource( 5 )]
 position = Vector2( 1500, 314 )
+speak = true
 
 [node name="Human7" parent="YSort/Humans" instance=ExtResource( 5 )]
 position = Vector2( 1193, 986 )
@@ -256,6 +260,7 @@ speak = true
 
 [node name="Human26" parent="YSort/Humans" instance=ExtResource( 5 )]
 position = Vector2( 1452, 305 )
+speak = true
 
 [node name="Human6" parent="YSort/Humans" instance=ExtResource( 5 )]
 position = Vector2( 1197, 971 )
@@ -269,6 +274,7 @@ position = Vector2( 2043, 746 )
 
 [node name="Human30" parent="YSort/Humans" instance=ExtResource( 5 )]
 position = Vector2( 1482, 299 )
+speak = true
 
 [node name="PenCoverObject2" parent="YSort" instance=ExtResource( 6 )]
 position = Vector2( 1180, 1018 )

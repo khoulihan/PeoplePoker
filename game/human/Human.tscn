@@ -470,7 +470,17 @@ phrases = "Run!
 Go go go!
 You can do it!
 Keep moving!
-Don't let them catch you!"
+Don't let them catch you!
+Wooo!
+We believe in you!
+Don't get poked!
+You rock!
+You're the best!
+Don't let us down!
+Stay in cover!
+Stay hidden!
+Get out of here!
+Don't forget: you have value!"
 speak_chance = 600
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
