@@ -6,11 +6,11 @@
 [ext_resource path="res://game/EnvironmentTileset.png" type="Texture" id=4]
 [ext_resource path="res://game/human/Human.tscn" type="PackedScene" id=5]
 [ext_resource path="res://game/cover/PenCoverObject2.tscn" type="PackedScene" id=6]
-[ext_resource path="res://game/cover/CoverObject.tscn" type="PackedScene" id=7]
-[ext_resource path="res://game/cover/DrinkCoverObject.tscn" type="PackedScene" id=8]
-[ext_resource path="res://game/cover/Nugget.tscn" type="PackedScene" id=9]
-[ext_resource path="res://game/cover/CardsCoverObject.tscn" type="PackedScene" id=10]
-[ext_resource path="res://game/cover/FlippedCardsCoverObject.tscn" type="PackedScene" id=11]
+[ext_resource path="res://game/cover/CardsCoverObject.tscn" type="PackedScene" id=7]
+[ext_resource path="res://game/cover/FlippedCardsCoverObject.tscn" type="PackedScene" id=8]
+[ext_resource path="res://game/cover/CoverObject.tscn" type="PackedScene" id=9]
+[ext_resource path="res://game/cover/DrinkCoverObject.tscn" type="PackedScene" id=10]
+[ext_resource path="res://game/cover/Nugget.tscn" type="PackedScene" id=11]
 [ext_resource path="res://game/CameraTarget.gd" type="Script" id=12]
 [ext_resource path="res://game/human/HumanSpritesheetx32.png" type="Texture" id=13]
 [ext_resource path="res://game/Test.gd" type="Script" id=14]
@@ -286,566 +286,572 @@ position = Vector2( 297, 1235 )
 [node name="PenCoverObject6" parent="YSort" instance=ExtResource( 6 )]
 position = Vector2( 1466, 344 )
 
-[node name="CoverObject" parent="YSort" instance=ExtResource( 7 )]
-position = Vector2( 949, 322 )
+[node name="Level1Cover" type="YSort" parent="YSort"]
+editor/display_folded = true
 
-[node name="CoverObject11" parent="YSort" instance=ExtResource( 7 )]
-position = Vector2( 1853, 181 )
-
-[node name="CoverObject3" parent="YSort" instance=ExtResource( 7 )]
-position = Vector2( 1774, 856 )
-
-[node name="CoverObject6" parent="YSort" instance=ExtResource( 7 )]
-position = Vector2( 2287, 958 )
-
-[node name="CoverObject7" parent="YSort" instance=ExtResource( 7 )]
-position = Vector2( 1300, 1171 )
-
-[node name="CoverObject10" parent="YSort" instance=ExtResource( 7 )]
-position = Vector2( 1517, 1425 )
-
-[node name="CoverObject8" parent="YSort" instance=ExtResource( 7 )]
-position = Vector2( 1669, 1943 )
-
-[node name="CoverObject9" parent="YSort" instance=ExtResource( 7 )]
-position = Vector2( 800, 1576 )
-
-[node name="CoverObject13" parent="YSort" instance=ExtResource( 7 )]
-position = Vector2( 515, 1434 )
-
-[node name="CoverObject15" parent="YSort" instance=ExtResource( 7 )]
-position = Vector2( 105, 1470 )
-
-[node name="CoverObject2" parent="YSort" instance=ExtResource( 7 )]
-position = Vector2( 519, 824 )
-
-[node name="CoverObject16" parent="YSort" instance=ExtResource( 7 )]
-position = Vector2( 801, 972 )
-
-[node name="CoverObject12" parent="YSort" instance=ExtResource( 7 )]
-position = Vector2( 2148, 1577 )
-
-[node name="CoverObject14" parent="YSort" instance=ExtResource( 7 )]
-position = Vector2( 1855, 1622 )
-
-[node name="CoverObject4" parent="YSort" instance=ExtResource( 7 )]
-position = Vector2( 1131, 633 )
-
-[node name="CoverObject5" parent="YSort" instance=ExtResource( 7 )]
-position = Vector2( 247, 454 )
-
-[node name="DrinkCoverObject" parent="YSort" instance=ExtResource( 8 )]
-position = Vector2( 998, 1022 )
-
-[node name="DrinkCoverObject8" parent="YSort" instance=ExtResource( 8 )]
-position = Vector2( 1361, 974 )
-
-[node name="DrinkCoverObject7" parent="YSort" instance=ExtResource( 8 )]
-position = Vector2( 1066, 1421 )
-
-[node name="DrinkCoverObject5" parent="YSort" instance=ExtResource( 8 )]
-position = Vector2( 1367, 2021 )
-
-[node name="DrinkCoverObject12" parent="YSort" instance=ExtResource( 8 )]
-position = Vector2( 2137, 1858 )
-
-[node name="DrinkCoverObject10" parent="YSort" instance=ExtResource( 8 )]
-position = Vector2( 370, 1872 )
-
-[node name="DrinkCoverObject2" parent="YSort" instance=ExtResource( 8 )]
-position = Vector2( 480, 106 )
-
-[node name="DrinkCoverObject3" parent="YSort" instance=ExtResource( 8 )]
-position = Vector2( 87, 669 )
-
-[node name="DrinkCoverObject9" parent="YSort" instance=ExtResource( 8 )]
-position = Vector2( 81, 1192 )
-
-[node name="DrinkCoverObject4" parent="YSort" instance=ExtResource( 8 )]
-position = Vector2( 1309, 429 )
-
-[node name="DrinkCoverObject11" parent="YSort" instance=ExtResource( 8 )]
-position = Vector2( 2160, 429 )
-
-[node name="DrinkCoverObject6" parent="YSort" instance=ExtResource( 8 )]
-position = Vector2( 2285, 1232 )
-
-[node name="DrinkCoverObject13" parent="YSort" instance=ExtResource( 8 )]
-position = Vector2( 1671, 1196 )
-
-[node name="DrinkCoverObject14" parent="YSort" instance=ExtResource( 8 )]
-position = Vector2( 1618, 114 )
-
-[node name="Nugget" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 894, 373 )
-
-[node name="Nugget105" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 1798, 232 )
-
-[node name="Nugget29" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 551, 177 )
-
-[node name="Nugget30" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 607, 63 )
-
-[node name="Nugget31" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 659, 37 )
-
-[node name="Nugget32" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 57, 745 )
-
-[node name="Nugget33" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 135, 598 )
-
-[node name="Nugget14" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 423, 721 )
-
-[node name="Nugget118" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 2052, 1474 )
-
-[node name="Nugget15" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 939, 764 )
-
-[node name="Nugget125" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 978, 560 )
-
-[node name="Nugget55" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 1652, 1420 )
-
-[node name="Nugget62" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 604, 1128 )
-
-[node name="Nugget134" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 791, 1030 )
-
-[node name="Nugget128" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 286, 1401 )
-
-[node name="Nugget132" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( -4, 1524 )
-
-[node name="Nugget70" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 2098, 553 )
-
-[node name="Nugget24" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 123, 373 )
-
-[node name="Nugget2" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 939, 401 )
-
-[node name="Nugget107" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 1843, 260 )
-
-[node name="Nugget13" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 468, 749 )
-
-[node name="Nugget119" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 2097, 1502 )
-
-[node name="Nugget16" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 984, 792 )
-
-[node name="Nugget56" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 1697, 1448 )
-
-[node name="Nugget63" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 649, 1156 )
-
-[node name="Nugget133" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 836, 1058 )
-
-[node name="Nugget127" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 331, 1429 )
-
-[node name="Nugget131" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 41, 1552 )
-
-[node name="Nugget130" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 417, 1465 )
-
-[node name="Nugget71" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 2143, 581 )
-
-[node name="Nugget23" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 168, 401 )
-
-[node name="Nugget3" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 859, 474 )
-
-[node name="Nugget126" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 588, 337 )
-
-[node name="Nugget106" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 1763, 333 )
-
-[node name="Nugget76" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 1833, 926 )
-
-[node name="Nugget80" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 2386, 1129 )
-
-[node name="Nugget84" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 456, 885 )
-
-[node name="Nugget117" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 2085, 1638 )
-
-[node name="Nugget12" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 388, 822 )
-
-[node name="Nugget122" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 2017, 1575 )
-
-[node name="Nugget19" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 904, 865 )
-
-[node name="Nugget57" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 1617, 1521 )
-
-[node name="Nugget108" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 1383, 1655 )
-
-[node name="Nugget109" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 1605, 1815 )
-
-[node name="Nugget110" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 1375, 1870 )
-
-[node name="Nugget64" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 569, 1229 )
-
-[node name="Nugget129" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 251, 1502 )
-
-[node name="Nugget72" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 2063, 654 )
-
-[node name="Nugget26" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 88, 474 )
-
-[node name="Nugget4" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 1083, 295 )
-
-[node name="Nugget104" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 1987, 154 )
-
-[node name="Nugget10" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 612, 643 )
-
-[node name="Nugget78" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 1586, 1095 )
-
-[node name="Nugget89" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 1527, 895 )
-
-[node name="Nugget90" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 1547, 846 )
-
-[node name="Nugget91" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 1630, 879 )
-
-[node name="Nugget82" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 2139, 1298 )
-
-[node name="Nugget86" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 209, 1054 )
-
-[node name="Nugget58" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 1324, 1224 )
-
-[node name="Nugget65" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 268, 1013 )
-
-[node name="Nugget73" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 1771, 432 )
-
-[node name="Nugget17" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 1128, 686 )
-
-[node name="Nugget22" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 312, 295 )
-
-[node name="Nugget5" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 1215, 474 )
-
-[node name="Nugget9" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 744, 822 )
-
-[node name="Nugget116" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 2373, 1575 )
-
-[node name="Nugget59" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 1457, 1478 )
-
-[node name="Nugget66" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 409, 1186 )
-
-[node name="Nugget74" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 1903, 611 )
-
-[node name="Nugget18" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 1260, 865 )
-
-[node name="Nugget25" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 444, 474 )
-
-[node name="Nugget77" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 1418, 926 )
-
-[node name="Nugget81" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 1971, 1129 )
-
-[node name="Nugget85" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 41, 885 )
-
-[node name="Nugget34" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 1122, 1134 )
-
-[node name="Nugget39" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 1316, 1250 )
-
-[node name="Nugget40" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 1927, 980 )
-
-[node name="Nugget43" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 2309, 822 )
-
-[node name="Nugget46" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 1086, 1632 )
-
-[node name="Nugget94" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 710, 1456 )
-
-[node name="Nugget103" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 459, 1651 )
-
-[node name="Nugget111" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 1734, 1735 )
-
-[node name="Nugget49" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 1785, 1936 )
-
-[node name="Nugget52" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 965, 1883 )
-
-[node name="Nugget6" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 1178, 435 )
-
-[node name="Nugget11" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 707, 783 )
-
-[node name="Nugget120" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 2336, 1536 )
-
-[node name="Nugget61" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 1420, 1439 )
-
-[node name="Nugget68" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 372, 1147 )
-
-[node name="Nugget69" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 1866, 572 )
-
-[node name="Nugget20" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 1223, 826 )
-
-[node name="Nugget92" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 1212, 740 )
-
-[node name="Nugget123" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 1603, 746 )
-
-[node name="Nugget124" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 1689, 668 )
-
-[node name="Nugget27" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 407, 435 )
-
-[node name="Nugget35" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 1085, 1095 )
-
-[node name="Nugget38" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 1279, 1211 )
-
-[node name="Nugget42" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 1890, 941 )
-
-[node name="Nugget45" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 2272, 783 )
-
-[node name="Nugget48" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 1049, 1593 )
-
-[node name="Nugget96" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 673, 1417 )
-
-[node name="Nugget101" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 422, 1612 )
-
-[node name="Nugget115" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 1697, 1696 )
-
-[node name="Nugget51" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 1748, 1897 )
-
-[node name="Nugget54" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 928, 1844 )
-
-[node name="Nugget7" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 1187, 513 )
-
-[node name="Nugget8" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 716, 861 )
-
-[node name="Nugget121" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 2345, 1614 )
-
-[node name="Nugget93" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 836, 825 )
-
-[node name="Nugget60" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 1429, 1517 )
-
-[node name="Nugget67" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 381, 1225 )
-
-[node name="Nugget75" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 1875, 650 )
-
-[node name="Nugget21" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 1232, 904 )
-
-[node name="Nugget28" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 416, 513 )
-
-[node name="Nugget79" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 1053, 895 )
-
-[node name="Nugget83" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 1943, 1168 )
-
-[node name="Nugget87" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 13, 924 )
-
-[node name="Nugget36" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 1094, 1173 )
-
-[node name="Nugget37" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 1288, 1289 )
-
-[node name="Nugget97" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 850, 1424 )
-
-[node name="Nugget99" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 599, 1619 )
-
-[node name="Nugget113" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 1874, 1703 )
-
-[node name="Nugget88" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 1378, 1332 )
-
-[node name="Nugget98" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 940, 1467 )
-
-[node name="Nugget102" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 689, 1662 )
-
-[node name="Nugget112" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 1964, 1746 )
-
-[node name="Nugget41" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 1899, 1019 )
-
-[node name="Nugget44" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 2281, 861 )
-
-[node name="Nugget47" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 1058, 1671 )
-
-[node name="Nugget95" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 682, 1495 )
-
-[node name="Nugget100" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 431, 1690 )
-
-[node name="Nugget114" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 1706, 1774 )
-
-[node name="Nugget50" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 1757, 1975 )
-
-[node name="Nugget53" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 937, 1922 )
-
-[node name="CardsCoverObject" parent="YSort" instance=ExtResource( 10 )]
+[node name="CardsCoverObject" parent="YSort/Level1Cover" instance=ExtResource( 7 )]
 position = Vector2( 758, 69 )
 
-[node name="CardsCoverObject6" parent="YSort" instance=ExtResource( 10 )]
+[node name="CardsCoverObject6" parent="YSort/Level1Cover" instance=ExtResource( 7 )]
 position = Vector2( 1350, 104 )
 
-[node name="CardsCoverObject7" parent="YSort" instance=ExtResource( 10 )]
+[node name="CardsCoverObject7" parent="YSort/Level1Cover" instance=ExtResource( 7 )]
 position = Vector2( 185, 192 )
 
-[node name="CardsCoverObject2" parent="YSort" instance=ExtResource( 10 )]
+[node name="CardsCoverObject2" parent="YSort/Level1Cover" instance=ExtResource( 7 )]
 position = Vector2( 587, 1036 )
 
-[node name="CardsCoverObject10" parent="YSort" instance=ExtResource( 10 )]
+[node name="CardsCoverObject10" parent="YSort/Level1Cover" instance=ExtResource( 7 )]
 position = Vector2( 835, 643 )
 
-[node name="CardsCoverObject9" parent="YSort" instance=ExtResource( 10 )]
+[node name="CardsCoverObject9" parent="YSort/Level1Cover" instance=ExtResource( 7 )]
 position = Vector2( 1700, 551 )
 
-[node name="CardsCoverObject11" parent="YSort" instance=ExtResource( 10 )]
+[node name="CardsCoverObject11" parent="YSort/Level1Cover" instance=ExtResource( 7 )]
 position = Vector2( 2308, 615 )
 
-[node name="CardsCoverObject12" parent="YSort" instance=ExtResource( 10 )]
+[node name="CardsCoverObject12" parent="YSort/Level1Cover" instance=ExtResource( 7 )]
 position = Vector2( 1954, 2004 )
 
-[node name="CardsCoverObject4" parent="YSort" instance=ExtResource( 10 )]
+[node name="CardsCoverObject4" parent="YSort/Level1Cover" instance=ExtResource( 7 )]
 position = Vector2( 831, 1991 )
 
-[node name="CardsCoverObject3" parent="YSort" instance=ExtResource( 10 )]
+[node name="CardsCoverObject3" parent="YSort/Level1Cover" instance=ExtResource( 7 )]
 position = Vector2( 1074, 1755 )
 
-[node name="CardsCoverObject8" parent="YSort" instance=ExtResource( 10 )]
+[node name="CardsCoverObject8" parent="YSort/Level1Cover" instance=ExtResource( 7 )]
 position = Vector2( 281, 1625 )
 
-[node name="CardsCoverObject5" parent="YSort" instance=ExtResource( 10 )]
+[node name="CardsCoverObject5" parent="YSort/Level1Cover" instance=ExtResource( 7 )]
 position = Vector2( 1284, 1568 )
 
-[node name="FlippedCardsCoverObject" parent="YSort" instance=ExtResource( 11 )]
+[node name="FlippedCardsCoverObject" parent="YSort/Level1Cover" instance=ExtResource( 8 )]
 position = Vector2( 1094, 827 )
 
-[node name="FlippedCardsCoverObject5" parent="YSort" instance=ExtResource( 11 )]
+[node name="FlippedCardsCoverObject5" parent="YSort/Level1Cover" instance=ExtResource( 8 )]
 position = Vector2( 652, 437 )
 
-[node name="FlippedCardsCoverObject10" parent="YSort" instance=ExtResource( 11 )]
+[node name="FlippedCardsCoverObject10" parent="YSort/Level1Cover" instance=ExtResource( 8 )]
 position = Vector2( 1059, 74 )
 
-[node name="FlippedCardsCoverObject3" parent="YSort" instance=ExtResource( 11 )]
+[node name="FlippedCardsCoverObject3" parent="YSort/Level1Cover" instance=ExtResource( 8 )]
 position = Vector2( 1990, 1056 )
 
-[node name="FlippedCardsCoverObject7" parent="YSort" instance=ExtResource( 11 )]
+[node name="FlippedCardsCoverObject7" parent="YSort/Level1Cover" instance=ExtResource( 8 )]
 position = Vector2( 1471, 691 )
 
-[node name="FlippedCardsCoverObject11" parent="YSort" instance=ExtResource( 11 )]
+[node name="FlippedCardsCoverObject11" parent="YSort/Level1Cover" instance=ExtResource( 8 )]
 position = Vector2( 1948, 379 )
 
-[node name="FlippedCardsCoverObject8" parent="YSort" instance=ExtResource( 11 )]
+[node name="FlippedCardsCoverObject8" parent="YSort/Level1Cover" instance=ExtResource( 8 )]
 position = Vector2( 885, 1224 )
 
-[node name="FlippedCardsCoverObject9" parent="YSort" instance=ExtResource( 11 )]
+[node name="FlippedCardsCoverObject9" parent="YSort/Level1Cover" instance=ExtResource( 8 )]
 position = Vector2( 653, 1768 )
 
-[node name="FlippedCardsCoverObject6" parent="YSort" instance=ExtResource( 11 )]
+[node name="FlippedCardsCoverObject6" parent="YSort/Level1Cover" instance=ExtResource( 8 )]
 position = Vector2( 1876, 1313 )
 
-[node name="FlippedCardsCoverObject4" parent="YSort" instance=ExtResource( 11 )]
+[node name="FlippedCardsCoverObject4" parent="YSort/Level1Cover" instance=ExtResource( 8 )]
 position = Vector2( 1583, 1000 )
 
-[node name="FlippedCardsCoverObject2" parent="YSort" instance=ExtResource( 11 )]
+[node name="FlippedCardsCoverObject2" parent="YSort/Level1Cover" instance=ExtResource( 8 )]
 position = Vector2( 305, 977 )
+
+[node name="CoverObject" parent="YSort/Level1Cover" instance=ExtResource( 9 )]
+position = Vector2( 949, 322 )
+
+[node name="CoverObject11" parent="YSort/Level1Cover" instance=ExtResource( 9 )]
+position = Vector2( 1853, 181 )
+
+[node name="CoverObject3" parent="YSort/Level1Cover" instance=ExtResource( 9 )]
+position = Vector2( 1774, 856 )
+
+[node name="CoverObject6" parent="YSort/Level1Cover" instance=ExtResource( 9 )]
+position = Vector2( 2287, 958 )
+
+[node name="CoverObject7" parent="YSort/Level1Cover" instance=ExtResource( 9 )]
+position = Vector2( 1300, 1171 )
+
+[node name="CoverObject10" parent="YSort/Level1Cover" instance=ExtResource( 9 )]
+position = Vector2( 1517, 1425 )
+
+[node name="CoverObject8" parent="YSort/Level1Cover" instance=ExtResource( 9 )]
+position = Vector2( 1669, 1943 )
+
+[node name="CoverObject9" parent="YSort/Level1Cover" instance=ExtResource( 9 )]
+position = Vector2( 800, 1576 )
+
+[node name="CoverObject13" parent="YSort/Level1Cover" instance=ExtResource( 9 )]
+position = Vector2( 515, 1434 )
+
+[node name="CoverObject15" parent="YSort/Level1Cover" instance=ExtResource( 9 )]
+position = Vector2( 105, 1470 )
+
+[node name="CoverObject2" parent="YSort/Level1Cover" instance=ExtResource( 9 )]
+position = Vector2( 519, 824 )
+
+[node name="CoverObject16" parent="YSort/Level1Cover" instance=ExtResource( 9 )]
+position = Vector2( 801, 972 )
+
+[node name="CoverObject12" parent="YSort/Level1Cover" instance=ExtResource( 9 )]
+position = Vector2( 2148, 1577 )
+
+[node name="CoverObject14" parent="YSort/Level1Cover" instance=ExtResource( 9 )]
+position = Vector2( 1855, 1622 )
+
+[node name="CoverObject4" parent="YSort/Level1Cover" instance=ExtResource( 9 )]
+position = Vector2( 1131, 633 )
+
+[node name="CoverObject5" parent="YSort/Level1Cover" instance=ExtResource( 9 )]
+position = Vector2( 247, 454 )
+
+[node name="DrinkCoverObject" parent="YSort/Level1Cover" instance=ExtResource( 10 )]
+position = Vector2( 998, 1022 )
+
+[node name="DrinkCoverObject8" parent="YSort/Level1Cover" instance=ExtResource( 10 )]
+position = Vector2( 1361, 974 )
+
+[node name="DrinkCoverObject7" parent="YSort/Level1Cover" instance=ExtResource( 10 )]
+position = Vector2( 1066, 1421 )
+
+[node name="DrinkCoverObject5" parent="YSort/Level1Cover" instance=ExtResource( 10 )]
+position = Vector2( 1367, 2021 )
+
+[node name="DrinkCoverObject12" parent="YSort/Level1Cover" instance=ExtResource( 10 )]
+position = Vector2( 2137, 1858 )
+
+[node name="DrinkCoverObject10" parent="YSort/Level1Cover" instance=ExtResource( 10 )]
+position = Vector2( 370, 1872 )
+
+[node name="DrinkCoverObject2" parent="YSort/Level1Cover" instance=ExtResource( 10 )]
+position = Vector2( 480, 106 )
+
+[node name="DrinkCoverObject3" parent="YSort/Level1Cover" instance=ExtResource( 10 )]
+position = Vector2( 87, 669 )
+
+[node name="DrinkCoverObject9" parent="YSort/Level1Cover" instance=ExtResource( 10 )]
+position = Vector2( 81, 1192 )
+
+[node name="DrinkCoverObject4" parent="YSort/Level1Cover" instance=ExtResource( 10 )]
+position = Vector2( 1309, 429 )
+
+[node name="DrinkCoverObject11" parent="YSort/Level1Cover" instance=ExtResource( 10 )]
+position = Vector2( 2160, 429 )
+
+[node name="DrinkCoverObject6" parent="YSort/Level1Cover" instance=ExtResource( 10 )]
+position = Vector2( 2285, 1232 )
+
+[node name="DrinkCoverObject13" parent="YSort/Level1Cover" instance=ExtResource( 10 )]
+position = Vector2( 1671, 1196 )
+
+[node name="DrinkCoverObject14" parent="YSort/Level1Cover" instance=ExtResource( 10 )]
+position = Vector2( 1618, 114 )
+
+[node name="Level1Obstacles" type="YSort" parent="YSort"]
+editor/display_folded = true
+
+[node name="Nugget" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 894, 373 )
+
+[node name="Nugget105" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 1798, 232 )
+
+[node name="Nugget29" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 551, 177 )
+
+[node name="Nugget30" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 607, 63 )
+
+[node name="Nugget31" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 659, 37 )
+
+[node name="Nugget32" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 57, 745 )
+
+[node name="Nugget33" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 135, 598 )
+
+[node name="Nugget14" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 423, 721 )
+
+[node name="Nugget118" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 2052, 1474 )
+
+[node name="Nugget15" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 939, 764 )
+
+[node name="Nugget125" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 978, 560 )
+
+[node name="Nugget55" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 1652, 1420 )
+
+[node name="Nugget62" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 604, 1128 )
+
+[node name="Nugget134" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 791, 1030 )
+
+[node name="Nugget128" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 286, 1401 )
+
+[node name="Nugget132" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( -4, 1524 )
+
+[node name="Nugget70" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 2098, 553 )
+
+[node name="Nugget24" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 123, 373 )
+
+[node name="Nugget2" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 939, 401 )
+
+[node name="Nugget107" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 1843, 260 )
+
+[node name="Nugget13" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 468, 749 )
+
+[node name="Nugget119" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 2097, 1502 )
+
+[node name="Nugget16" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 984, 792 )
+
+[node name="Nugget56" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 1697, 1448 )
+
+[node name="Nugget63" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 649, 1156 )
+
+[node name="Nugget133" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 836, 1058 )
+
+[node name="Nugget127" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 331, 1429 )
+
+[node name="Nugget131" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 41, 1552 )
+
+[node name="Nugget130" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 417, 1465 )
+
+[node name="Nugget71" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 2143, 581 )
+
+[node name="Nugget23" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 168, 401 )
+
+[node name="Nugget3" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 859, 474 )
+
+[node name="Nugget126" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 588, 337 )
+
+[node name="Nugget106" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 1763, 333 )
+
+[node name="Nugget76" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 1833, 926 )
+
+[node name="Nugget80" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 2386, 1129 )
+
+[node name="Nugget84" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 456, 885 )
+
+[node name="Nugget117" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 2085, 1638 )
+
+[node name="Nugget12" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 388, 822 )
+
+[node name="Nugget122" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 2017, 1575 )
+
+[node name="Nugget19" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 904, 865 )
+
+[node name="Nugget57" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 1617, 1521 )
+
+[node name="Nugget108" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 1383, 1655 )
+
+[node name="Nugget109" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 1605, 1815 )
+
+[node name="Nugget110" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 1375, 1870 )
+
+[node name="Nugget64" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 569, 1229 )
+
+[node name="Nugget129" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 251, 1502 )
+
+[node name="Nugget72" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 2063, 654 )
+
+[node name="Nugget26" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 88, 474 )
+
+[node name="Nugget4" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 1083, 295 )
+
+[node name="Nugget104" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 1987, 154 )
+
+[node name="Nugget10" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 612, 643 )
+
+[node name="Nugget78" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 1586, 1095 )
+
+[node name="Nugget89" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 1527, 895 )
+
+[node name="Nugget90" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 1547, 846 )
+
+[node name="Nugget91" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 1630, 879 )
+
+[node name="Nugget82" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 2139, 1298 )
+
+[node name="Nugget86" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 209, 1054 )
+
+[node name="Nugget58" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 1324, 1224 )
+
+[node name="Nugget65" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 268, 1013 )
+
+[node name="Nugget73" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 1771, 432 )
+
+[node name="Nugget17" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 1128, 686 )
+
+[node name="Nugget22" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 312, 295 )
+
+[node name="Nugget5" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 1215, 474 )
+
+[node name="Nugget9" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 744, 822 )
+
+[node name="Nugget116" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 2373, 1575 )
+
+[node name="Nugget59" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 1457, 1478 )
+
+[node name="Nugget66" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 409, 1186 )
+
+[node name="Nugget74" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 1903, 611 )
+
+[node name="Nugget18" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 1260, 865 )
+
+[node name="Nugget25" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 444, 474 )
+
+[node name="Nugget77" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 1418, 926 )
+
+[node name="Nugget81" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 1971, 1129 )
+
+[node name="Nugget85" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 41, 885 )
+
+[node name="Nugget34" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 1122, 1134 )
+
+[node name="Nugget39" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 1316, 1250 )
+
+[node name="Nugget40" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 1927, 980 )
+
+[node name="Nugget43" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 2309, 822 )
+
+[node name="Nugget46" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 1086, 1632 )
+
+[node name="Nugget94" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 710, 1456 )
+
+[node name="Nugget103" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 459, 1651 )
+
+[node name="Nugget111" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 1734, 1735 )
+
+[node name="Nugget49" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 1785, 1936 )
+
+[node name="Nugget52" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 965, 1883 )
+
+[node name="Nugget6" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 1178, 435 )
+
+[node name="Nugget11" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 707, 783 )
+
+[node name="Nugget120" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 2336, 1536 )
+
+[node name="Nugget61" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 1420, 1439 )
+
+[node name="Nugget68" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 372, 1147 )
+
+[node name="Nugget69" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 1866, 572 )
+
+[node name="Nugget20" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 1223, 826 )
+
+[node name="Nugget92" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 1212, 740 )
+
+[node name="Nugget123" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 1603, 746 )
+
+[node name="Nugget124" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 1689, 668 )
+
+[node name="Nugget27" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 407, 435 )
+
+[node name="Nugget35" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 1085, 1095 )
+
+[node name="Nugget38" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 1279, 1211 )
+
+[node name="Nugget42" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 1890, 941 )
+
+[node name="Nugget45" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 2272, 783 )
+
+[node name="Nugget48" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 1049, 1593 )
+
+[node name="Nugget96" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 673, 1417 )
+
+[node name="Nugget101" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 422, 1612 )
+
+[node name="Nugget115" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 1697, 1696 )
+
+[node name="Nugget51" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 1748, 1897 )
+
+[node name="Nugget54" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 928, 1844 )
+
+[node name="Nugget7" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 1187, 513 )
+
+[node name="Nugget8" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 716, 861 )
+
+[node name="Nugget121" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 2345, 1614 )
+
+[node name="Nugget93" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 836, 825 )
+
+[node name="Nugget60" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 1429, 1517 )
+
+[node name="Nugget67" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 381, 1225 )
+
+[node name="Nugget75" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 1875, 650 )
+
+[node name="Nugget21" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 1232, 904 )
+
+[node name="Nugget28" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 416, 513 )
+
+[node name="Nugget79" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 1053, 895 )
+
+[node name="Nugget83" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 1943, 1168 )
+
+[node name="Nugget87" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 13, 924 )
+
+[node name="Nugget36" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 1094, 1173 )
+
+[node name="Nugget37" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 1288, 1289 )
+
+[node name="Nugget97" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 850, 1424 )
+
+[node name="Nugget99" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 599, 1619 )
+
+[node name="Nugget113" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 1874, 1703 )
+
+[node name="Nugget88" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 1378, 1332 )
+
+[node name="Nugget98" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 940, 1467 )
+
+[node name="Nugget102" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 689, 1662 )
+
+[node name="Nugget112" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 1964, 1746 )
+
+[node name="Nugget41" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 1899, 1019 )
+
+[node name="Nugget44" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 2281, 861 )
+
+[node name="Nugget47" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 1058, 1671 )
+
+[node name="Nugget95" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 682, 1495 )
+
+[node name="Nugget100" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 431, 1690 )
+
+[node name="Nugget114" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 1706, 1774 )
+
+[node name="Nugget50" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 1757, 1975 )
+
+[node name="Nugget53" parent="YSort/Level1Obstacles" instance=ExtResource( 11 )]
+position = Vector2( 937, 1922 )
 
 [node name="CameraTarget" type="Node2D" parent="."]
 position = Vector2( 304, 246 )
