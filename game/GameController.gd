@@ -63,7 +63,7 @@ func spawn_player():
 	_player.max_stamina = 100
 	_player.roll_speed = 300
 	_player.run_stamina_drain = 50
-	_player.stamina_recharge = 10
+	_player.stamina_recharge = 20
 	$YSort.add_child(_player)
 	#var camera = $YSort/Camera
 	#$YSort.remove_child(camera)
