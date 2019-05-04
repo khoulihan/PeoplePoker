@@ -146,6 +146,7 @@ position = Vector2( 1181, 1034 )
 [node name="YSort" type="YSort" parent="."]
 
 [node name="Humans" type="YSort" parent="YSort"]
+editor/display_folded = true
 
 [node name="Human" parent="YSort/Humans" instance=ExtResource( 5 )]
 position = Vector2( 1150, 973 )
@@ -309,11 +310,23 @@ position = Vector2( 1669, 1943 )
 [node name="CoverObject9" parent="YSort" instance=ExtResource( 7 )]
 position = Vector2( 800, 1576 )
 
+[node name="CoverObject13" parent="YSort" instance=ExtResource( 7 )]
+position = Vector2( 515, 1434 )
+
+[node name="CoverObject15" parent="YSort" instance=ExtResource( 7 )]
+position = Vector2( 105, 1470 )
+
 [node name="CoverObject2" parent="YSort" instance=ExtResource( 7 )]
 position = Vector2( 519, 824 )
 
+[node name="CoverObject16" parent="YSort" instance=ExtResource( 7 )]
+position = Vector2( 801, 972 )
+
 [node name="CoverObject12" parent="YSort" instance=ExtResource( 7 )]
 position = Vector2( 2148, 1577 )
+
+[node name="CoverObject14" parent="YSort" instance=ExtResource( 7 )]
+position = Vector2( 1855, 1622 )
 
 [node name="CoverObject4" parent="YSort" instance=ExtResource( 7 )]
 position = Vector2( 1131, 633 )
@@ -357,6 +370,12 @@ position = Vector2( 2160, 429 )
 [node name="DrinkCoverObject6" parent="YSort" instance=ExtResource( 8 )]
 position = Vector2( 2285, 1232 )
 
+[node name="DrinkCoverObject13" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 1671, 1196 )
+
+[node name="DrinkCoverObject14" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 1618, 114 )
+
 [node name="Nugget" parent="YSort" instance=ExtResource( 9 )]
 position = Vector2( 894, 373 )
 
@@ -396,6 +415,15 @@ position = Vector2( 1652, 1420 )
 [node name="Nugget62" parent="YSort" instance=ExtResource( 9 )]
 position = Vector2( 604, 1128 )
 
+[node name="Nugget134" parent="YSort" instance=ExtResource( 9 )]
+position = Vector2( 791, 1030 )
+
+[node name="Nugget128" parent="YSort" instance=ExtResource( 9 )]
+position = Vector2( 286, 1401 )
+
+[node name="Nugget132" parent="YSort" instance=ExtResource( 9 )]
+position = Vector2( -4, 1524 )
+
 [node name="Nugget70" parent="YSort" instance=ExtResource( 9 )]
 position = Vector2( 2098, 553 )
 
@@ -422,6 +450,18 @@ position = Vector2( 1697, 1448 )
 
 [node name="Nugget63" parent="YSort" instance=ExtResource( 9 )]
 position = Vector2( 649, 1156 )
+
+[node name="Nugget133" parent="YSort" instance=ExtResource( 9 )]
+position = Vector2( 836, 1058 )
+
+[node name="Nugget127" parent="YSort" instance=ExtResource( 9 )]
+position = Vector2( 331, 1429 )
+
+[node name="Nugget131" parent="YSort" instance=ExtResource( 9 )]
+position = Vector2( 41, 1552 )
+
+[node name="Nugget130" parent="YSort" instance=ExtResource( 9 )]
+position = Vector2( 417, 1465 )
 
 [node name="Nugget71" parent="YSort" instance=ExtResource( 9 )]
 position = Vector2( 2143, 581 )
@@ -473,6 +513,9 @@ position = Vector2( 1375, 1870 )
 
 [node name="Nugget64" parent="YSort" instance=ExtResource( 9 )]
 position = Vector2( 569, 1229 )
+
+[node name="Nugget129" parent="YSort" instance=ExtResource( 9 )]
+position = Vector2( 251, 1502 )
 
 [node name="Nugget72" parent="YSort" instance=ExtResource( 9 )]
 position = Vector2( 2063, 654 )
@@ -747,8 +790,17 @@ position = Vector2( 185, 192 )
 [node name="CardsCoverObject2" parent="YSort" instance=ExtResource( 10 )]
 position = Vector2( 587, 1036 )
 
+[node name="CardsCoverObject10" parent="YSort" instance=ExtResource( 10 )]
+position = Vector2( 835, 643 )
+
 [node name="CardsCoverObject9" parent="YSort" instance=ExtResource( 10 )]
 position = Vector2( 1700, 551 )
+
+[node name="CardsCoverObject11" parent="YSort" instance=ExtResource( 10 )]
+position = Vector2( 2308, 615 )
+
+[node name="CardsCoverObject12" parent="YSort" instance=ExtResource( 10 )]
+position = Vector2( 1954, 2004 )
 
 [node name="CardsCoverObject4" parent="YSort" instance=ExtResource( 10 )]
 position = Vector2( 831, 1991 )
@@ -768,8 +820,23 @@ position = Vector2( 1094, 827 )
 [node name="FlippedCardsCoverObject5" parent="YSort" instance=ExtResource( 11 )]
 position = Vector2( 652, 437 )
 
+[node name="FlippedCardsCoverObject10" parent="YSort" instance=ExtResource( 11 )]
+position = Vector2( 1059, 74 )
+
 [node name="FlippedCardsCoverObject3" parent="YSort" instance=ExtResource( 11 )]
 position = Vector2( 1990, 1056 )
+
+[node name="FlippedCardsCoverObject7" parent="YSort" instance=ExtResource( 11 )]
+position = Vector2( 1471, 691 )
+
+[node name="FlippedCardsCoverObject11" parent="YSort" instance=ExtResource( 11 )]
+position = Vector2( 1948, 379 )
+
+[node name="FlippedCardsCoverObject8" parent="YSort" instance=ExtResource( 11 )]
+position = Vector2( 885, 1224 )
+
+[node name="FlippedCardsCoverObject9" parent="YSort" instance=ExtResource( 11 )]
+position = Vector2( 653, 1768 )
 
 [node name="FlippedCardsCoverObject6" parent="YSort" instance=ExtResource( 11 )]
 position = Vector2( 1876, 1313 )
