@@ -6,13 +6,13 @@
 points = PoolVector2Array( 0, -11.32, 42.52, -7.03, 39.5, 5, 18.86, 14.8, -16.97, 15.17, -38.89, 4.88, -40.89, -4.63 )
 
 [sub_resource type="CircleShape2D" id=2]
-radius = 33.0
+radius = 44.0114
 
 [sub_resource type="CircleShape2D" id=3]
-radius = 33.2415
+radius = 43.0116
 
 [sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 38, 32 )
+extents = Vector2( 38, 43 )
 
 [node name="DrinkCoverObject" instance=ExtResource( 1 )]
 
