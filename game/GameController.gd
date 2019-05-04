@@ -42,8 +42,30 @@ func _restart_game():
 		_player_killed = false
 		_rescued = 0
 		emit_signal("rescued_updated", _rescued)
+	_configure_level()
 	spawn_player()
 	FadeMask.fade_out()
+
+func _configure_level():
+	if _rescued < 2:
+		enable_all($YSort/Level1Cover)
+		enable_all($YSort/Level2Cover)
+		enable_all($YSort/Level3Cover)
+		enable_all($YSort/Level4Cover)
+	elif _rescued < 4:
+		disable_all($YSort/Level1Cover)
+	elif _rescued < 6:
+		disable_all($YSort/Level2Cover)
+	elif _rescued < 8:
+		disable_all($YSort/Level3Cover)
+
+func enable_all(node):
+	for n in node.get_children():
+		n.enable()
+
+func disable_all(node):
+	for n in node.get_children():
+		n.disable()
 
 func _populate_finger_array():
 	_fingers = $Fingers.get_children()
