@@ -200,7 +200,6 @@ position = Vector2( 2021, 771 )
 
 [node name="Human27" parent="YSort/Humans" instance=ExtResource( 5 )]
 position = Vector2( 1460, 324 )
-speak = true
 
 [node name="Human4" parent="YSort/Humans" instance=ExtResource( 5 )]
 position = Vector2( 1205, 1006 )
@@ -217,7 +216,6 @@ speak = true
 
 [node name="Human28" parent="YSort/Humans" instance=ExtResource( 5 )]
 position = Vector2( 1490, 334 )
-speak = true
 
 [node name="Human5" parent="YSort/Humans" instance=ExtResource( 5 )]
 position = Vector2( 1215, 986 )
@@ -245,7 +243,6 @@ speak = true
 
 [node name="Human32" parent="YSort/Humans" instance=ExtResource( 5 )]
 position = Vector2( 1478, 314 )
-speak = true
 
 [node name="Human8" parent="YSort/Humans" instance=ExtResource( 5 )]
 position = Vector2( 1167, 977 )
@@ -260,7 +257,6 @@ speak = true
 
 [node name="Human26" parent="YSort/Humans" instance=ExtResource( 5 )]
 position = Vector2( 1452, 305 )
-speak = true
 
 [node name="Human6" parent="YSort/Humans" instance=ExtResource( 5 )]
 position = Vector2( 1197, 971 )
@@ -274,7 +270,6 @@ position = Vector2( 2043, 746 )
 
 [node name="Human30" parent="YSort/Humans" instance=ExtResource( 5 )]
 position = Vector2( 1482, 299 )
-speak = true
 
 [node name="PenCoverObject2" parent="YSort" instance=ExtResource( 6 )]
 position = Vector2( 1180, 1018 )
@@ -722,7 +717,7 @@ position = Vector2( 63, -149 )
 stream = ExtResource( 21 )
 bus = "SFX"
 
-[node name="SpeechBubbles" type="CanvasLayer" parent="."]
+[node name="SpeechBubbles" type="YSort" parent="."]
 
 [connection signal="player_spawned" from="." to="HUD" method="_on_Game_player_spawned"]
 [connection signal="rescued_updated" from="." to="HUD" method="_on_Game_rescued_updated"]

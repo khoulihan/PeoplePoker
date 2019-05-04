@@ -26,17 +26,10 @@ func _ready():
 	spawn_player()
 	FadeMask.connect("fade_in_complete", self, "_restart_game")
 
-func _process(delta):
-	for bubble in $SpeechBubbles.get_children():
-		bubble.update_transforms(get_viewport_transform(), get_global_transform())
-
 func _human_speak(speech, human):
 	var bubble = _speech_bubble_scene.instance(PackedScene.GEN_EDIT_STATE_DISABLED)
 	bubble.connect("speech_timed_out", human, "on_speech_timed_out") 
 	bubble.connect("speech_timed_out", self, "_speech_bubble_timed_out", [bubble])
-	
-	#bubble.rect_position = get_viewport_transform() * (get_global_transform() * (human.position +  Vector2(-22.0, -38.0)))
-	bubble.update_transforms(get_viewport_transform(), get_global_transform())
 	$SpeechBubbles.add_child(bubble)
 	bubble.display_speech(speech, 4.0, human.position)
 
