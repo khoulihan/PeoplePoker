@@ -69,6 +69,17 @@ func disable_all(node):
 
 func _populate_finger_array():
 	_fingers = $Fingers.get_children()
+	for finger in _fingers:
+		finger.connect("attack_complete", self, "_on_Finger_attack_complete", [finger])
+
+func _on_Finger_attack_complete(finger):
+	print("Finger attack complete")
+	var next_finger = finger #= _fingers[randi() % len(_fingers)]
+	#next_finger.pursue(_player)
+	while next_finger == finger:
+		next_finger = _fingers[randi() % len(_fingers)]
+	print("Next finger pursuing")
+	next_finger.pursue(_player)
 
 func spawn_player():
 	if _player:
@@ -157,7 +168,6 @@ func _reset_all_fingers() -> void:
 func _player_exited_cover() -> void:
 	# TODO: Might want to wait before activating a finger, but for now just doing it straight away
 	var finger = _fingers[randi() % len(_fingers)]
-	print (finger.name)
 	finger.pursue(_player)
 
 func _player_killed() -> void:

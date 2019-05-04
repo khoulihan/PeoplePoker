@@ -9,9 +9,9 @@ var _original_position : Vector2
 
 export(float) var pursue_speed : float = 50.0
 export(float) var retreat_speed : float = 40.0
-export(float) var attack_speed : float = 70.0
+export(float) var attack_speed : float = 150.0
 export(float) var attack_distance : float = 40.0
-export(float) var achieved_distance : float = 1.0
+export(float) var achieved_distance : float = 10.0
 
 signal attack_complete
 
@@ -42,6 +42,7 @@ func pursue(player) -> void:
 
 func abandon() -> void:
 	_player = null
+	_attack = false
 
 func reset() -> void:
 	self.position = _original_position
@@ -61,12 +62,18 @@ func _process(delta):
 				# TODO: This doesn't work because of how the fingers are attached to the camera
 				_attack_position = _player.position_prediction()
 		if _attack:
-			var attack_vector : Vector2 = (_player.global_position - self.global_position)
+			var attack_vector : Vector2 = (_attack_position - self.global_position)
 			var attack_translation = attack_vector.normalized() * attack_speed * delta
-			self.global_translate(attack_translation)
-			if (_player.global_position - self.global_position).length() < achieved_distance:
+			if attack_vector.length() < attack_translation.length():
+				self.global_translate(attack_vector)
+				print ("Abandoning")
 				abandon()
 				emit_signal("attack_complete")
+			else:
+				self.global_translate(attack_translation)
+			#if (_attack_position - self.global_position).length() < achieved_distance:
+			#	abandon()
+			#	emit_signal("attack_complete")
 	else:
 		# TODO: Could cut out some work here by deativating once original position is reached
 		# Retreat

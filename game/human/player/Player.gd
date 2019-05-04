@@ -41,6 +41,7 @@ func _process(delta):
 					_roll_vector = movement_input
 					_rolling = true
 					_stamina = 0.0
+					$RollTimer.start()
 					# TODO: Play animation
 				elif roll:
 					# roll requested but denied
@@ -143,9 +144,12 @@ func enter_fall_state(fall_motion) -> void:
 		$AnimationPlayer.play("JumpFront")
 
 func position_prediction() -> Vector2:
-	return self.position + (self._last_movement * run_speed * 0.5)
+	return self.position # + (self._last_movement * run_speed * 0.5)
 
 func kill():
 	_alive = false
 	$AnimationPlayer.play("Death")
 	emit_signal("killed")
+
+func _on_RollTimer_timeout():
+	_rolling = false
