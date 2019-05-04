@@ -13,11 +13,19 @@ export(float) var attack_speed : float = 150.0
 export(float) var attack_distance : float = 40.0
 export(float) var achieved_distance : float = 10.0
 
+enum State {
+	IDLE,
+	PURSUE,
+	RETREAT,
+	ANTICIPATE,
+	ATTACK
+}
+
 signal attack_complete
 
 var _player : Node2D
-var _attack : bool
 var _attack_position : Vector2
+var _state
 
 func _ready():
 	configure()
@@ -39,52 +47,70 @@ func configure():
 
 func pursue(player) -> void:
 	_player = player
+	_state = State.PURSUE
 
 func abandon() -> void:
 	_player = null
-	_attack = false
+	_state = State.RETREAT
+	$TargetDebug.disable()
+	$AnimationPlayer.play("Idle")
 
 func reset() -> void:
 	self.position = _original_position
+	_state = State.IDLE
+	$TargetDebug.disable()
 
 func _process(delta):
 	var global_pos = self.global_position
-	if _player != null:
-		# Pursue / attack
-		if !_attack:
-			var pursue_vector : Vector2 = (_player.global_position - self.global_position)
-			if pursue_vector.length() > attack_distance:
-				#print (pursue_vector)
-				var pursue_translation = pursue_vector.normalized() * pursue_speed * delta
-				self.global_translate(pursue_translation)
-			else:
-				_attack = true
-				# TODO: This doesn't work because of how the fingers are attached to the camera
-				_attack_position = _player.position_prediction()
-		if _attack:
-			var attack_vector : Vector2 = (_attack_position - self.global_position)
-			var attack_translation = attack_vector.normalized() * attack_speed * delta
-			if attack_vector.length() < attack_translation.length():
-				self.global_translate(attack_vector)
-				print ("Abandoning")
-				abandon()
-				emit_signal("attack_complete")
-			else:
-				self.global_translate(attack_translation)
-			#if (_attack_position - self.global_position).length() < achieved_distance:
-			#	abandon()
-			#	emit_signal("attack_complete")
+	if _state == State.PURSUE:
+		_process_pursue(delta)
+	elif _state == State.ANTICIPATE:
+		pass
+	elif _state == State.ATTACK:
+		_process_attack(delta)
 	else:
 		# TODO: Could cut out some work here by deativating once original position is reached
 		# Retreat
-		var retreat_vector : Vector2 = (_original_position - self.position)
-		#var retreat_direction : Vector2 = retreat_vector.normalized()
-		var retreat = retreat_vector.normalized() * retreat_speed * delta
-		if retreat.length_squared() > retreat_vector.length_squared():
-			self.position = _original_position
-		else:
-			self.translate(retreat)
-		
+		_process_retreat(delta)
+
+func _on_anticipation_complete():
+	_state = State.ATTACK
+
+func _process_pursue(delta):
+	# Pursue / attack
+	var pursue_vector : Vector2 = (_player.global_position - self.global_position)
+	if pursue_vector.length() > attack_distance:
+		#print (pursue_vector)
+		var pursue_translation = pursue_vector.normalized() * pursue_speed * delta
+		self.global_translate(pursue_translation)
+	else:
+		_state = State.ANTICIPATE
+		_attack_position = _player.position_prediction()
+		$TargetDebug.set_target(_attack_position)
+		$AnimationPlayer.play("Attack")
+
+func _process_attack(delta):
+	var attack_vector : Vector2 = (_attack_position - self.global_position)
+	var attack_translation = attack_vector.normalized() * attack_speed * delta
+	if attack_vector.length() < attack_translation.length():
+		self.global_translate(attack_vector)
+		print ("Abandoning")
+		abandon()
+		emit_signal("attack_complete")
+	else:
+		self.global_translate(attack_translation)
+	#if (_attack_position - self.global_position).length() < achieved_distance:
+	#	abandon()
+	#	emit_signal("attack_complete")
+
+func _process_retreat(delta):
+	var retreat_vector : Vector2 = (_original_position - self.position)
+	#var retreat_direction : Vector2 = retreat_vector.normalized()
+	var retreat = retreat_vector.normalized() * retreat_speed * delta
+	if retreat.length_squared() > retreat_vector.length_squared():
+		self.position = _original_position
+	else:
+		self.translate(retreat)
 
 func _on_Area2D_body_entered(body):
 	if body == _player:

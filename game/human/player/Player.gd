@@ -15,6 +15,7 @@ var _alive : bool = true
 var _stamina : float
 
 var _last_movement : Vector2
+var _last_actual_movement : Vector2
 var _was_running : bool
 var _roll_vector : Vector2
 var _rolling : bool
@@ -42,7 +43,10 @@ func _process(delta):
 					_rolling = true
 					_stamina = 0.0
 					$RollTimer.start()
-					# TODO: Play animation
+					if _facing_front(movement_input):
+						$AnimationPlayer.play("RollFront")
+					else:
+						$AnimationPlayer.play("RollBack")
 				elif roll:
 					# roll requested but denied
 					# TODO: Feedback
@@ -87,6 +91,7 @@ func _process(delta):
 			ceil(abs(requested_movement.y)) * sign(requested_movement.y)
 		)
 		var actual_movement : Vector2 = self.move_and_slide(final_movement)
+		_last_actual_movement = actual_movement
 		
 		if recharge_stamina:
 			_stamina += stamina_recharge * delta
@@ -144,7 +149,8 @@ func enter_fall_state(fall_motion) -> void:
 		$AnimationPlayer.play("JumpFront")
 
 func position_prediction() -> Vector2:
-	return self.position # + (self._last_movement * run_speed * 0.5)
+	#return self.position + (self._last_movement * walk_speed * (1.0/60.0) * 4.0)
+	return self.position + (self._last_actual_movement * 0.4)
 
 func kill():
 	_alive = false

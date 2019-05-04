@@ -287,9 +287,9 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id=11]
 resource_name = "RollBack"
-length = 0.8
+length = 0.4
 loop = true
-step = 0.2
+step = 0.05
 tracks/0/type = "value"
 tracks/0/path = NodePath("Male:frame")
 tracks/0/interp = 1
@@ -297,10 +297,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.05, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 340, 341, 342, 343 ]
+"values": [ 340, 341, 342, 343, 344 ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Female:frame")
@@ -309,7 +309,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"times": PoolRealArray( 0, 0.1, 0.2, 0.35 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 380, 381, 382, 383 ]
@@ -317,9 +317,9 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id=12]
 resource_name = "RollFront"
-length = 0.8
+length = 0.4
 loop = true
-step = 0.2
+step = 0.05
 tracks/0/type = "value"
 tracks/0/path = NodePath("Male:frame")
 tracks/0/interp = 1
@@ -327,10 +327,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.05, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 320, 321, 322, 323 ]
+"values": [ 320, 321, 322, 323, 324 ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Female:frame")
@@ -339,7 +339,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"times": PoolRealArray( 0, 0.1, 0.2, 0.35 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 360, 361, 362, 363 ]
@@ -490,7 +490,7 @@ centered = false
 offset = Vector2( -16, -28 )
 vframes = 20
 hframes = 20
-frame = 83
+frame = 340
 
 [node name="Female" type="Sprite" parent="."]
 material = ExtResource( 3 )
@@ -499,7 +499,7 @@ centered = false
 offset = Vector2( -16, -28 )
 vframes = 20
 hframes = 20
-frame = 123
+frame = 380
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Death = SubResource( 2 )
