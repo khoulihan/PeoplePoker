@@ -350,10 +350,10 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.35 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.05, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 380, 381, 382, 383 ]
+"values": [ 380, 381, 382, 383, 384 ]
 }
 
 [sub_resource type="Animation" id=12]
@@ -380,10 +380,10 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.35 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.05, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 360, 361, 362, 363 ]
+"values": [ 360, 361, 362, 363, 364 ]
 }
 
 [sub_resource type="Animation" id=13]
@@ -531,7 +531,7 @@ centered = false
 offset = Vector2( -16, -28 )
 vframes = 20
 hframes = 20
-frame = 340
+frame = 344
 
 [node name="Female" type="Sprite" parent="."]
 material = ExtResource( 3 )
@@ -540,7 +540,7 @@ centered = false
 offset = Vector2( -16, -28 )
 vframes = 20
 hframes = 20
-frame = 380
+frame = 385
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/DeathBack = SubResource( 17 )

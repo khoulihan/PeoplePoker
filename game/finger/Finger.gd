@@ -81,10 +81,11 @@ func _process_pursue(delta):
 	var pursue_vector : Vector2 = (_player.global_position - self.global_position)
 	if pursue_vector.length() > attack_distance:
 		#print (pursue_vector)
-		var pursue_translation = pursue_vector.normalized() * pursue_speed * delta
+		var pursue_translation = (pursue_vector.normalized() * pursue_speed * delta) - (_player.get_last_actual_movement() * delta * 0.25)
 		self.global_translate(pursue_translation)
 	else:
 		_state = State.ANTICIPATE
+		# Not sure if here or after anticipation is best spot to set target
 		_attack_position = _player.position_prediction()
 		$TargetDebug.set_target(_attack_position)
 		$AnimationPlayer.play("Attack")

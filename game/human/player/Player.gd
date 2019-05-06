@@ -160,6 +160,9 @@ func position_prediction() -> Vector2:
 	#return self.position + (self._last_movement * walk_speed * (1.0/60.0) * 4.0)
 	return self.position + (self._last_actual_movement * 0.4)
 
+func get_last_actual_movement() -> Vector2:
+	return _last_actual_movement
+
 func kill(direction : Vector2) -> void:
 	_alive = false
 	print(direction)
