@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://game/human/player/Player.gd" type="Script" id=1]
 [ext_resource path="res://game/human/HumanSpritesheetx32.png" type="Texture" id=2]
@@ -8,8 +8,8 @@
 [sub_resource type="CircleShape2D" id=1]
 radius = 5.0
 
-[sub_resource type="Animation" id=2]
-resource_name = "Death"
+[sub_resource type="Animation" id=17]
+resource_name = "DeathBack"
 length = 0.8
 step = 0.05
 tracks/0/type = "value"
@@ -19,7 +19,48 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.05, 0.15 ),
+"times": PoolRealArray( 0, 0.1, 0.15 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 30, 31, 32 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Female:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.15 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 70, 71, 72 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Shadow:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.15 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "DeathFront"
+length = 0.8
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Male:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.15 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
 "values": [ 10, 11, 13 ]
@@ -31,7 +72,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.05, 0.15 ),
+"times": PoolRealArray( 0, 0.1, 0.15 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
 "values": [ 50, 51, 53 ]
@@ -502,7 +543,8 @@ hframes = 20
 frame = 380
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/Death = SubResource( 2 )
+anims/DeathBack = SubResource( 17 )
+anims/DeathFront = SubResource( 2 )
 anims/IdleCoverBack = SubResource( 3 )
 anims/IdleCoverFront = SubResource( 4 )
 anims/IdleOpenBack = SubResource( 5 )

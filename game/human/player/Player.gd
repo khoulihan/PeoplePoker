@@ -164,7 +164,10 @@ func kill(direction : Vector2) -> void:
 	_alive = false
 	print(direction)
 	_death_motion = (direction.normalized() + (_last_actual_movement.normalized() * 0.5)).normalized() * 200.0
-	$AnimationPlayer.play("Death")
+	if _facing_front(_death_motion):
+		$AnimationPlayer.play("DeathFront")
+	else:
+		$AnimationPlayer.play("DeathBack")
 	emit_signal("killed")
 
 func _on_RollTimer_timeout():
