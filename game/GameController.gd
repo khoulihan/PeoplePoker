@@ -173,6 +173,7 @@ func _player_exited_cover() -> void:
 func _player_killed() -> void:
 	_abandon_all_pursuits()
 	_player_killed = true
+	$CameraTarget.follow(null)
 	$RespawnTimer.start()
 
 func _on_RespawnTimer_timeout():

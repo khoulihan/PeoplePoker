@@ -114,5 +114,5 @@ func _process_retreat(delta):
 
 func _on_Area2D_body_entered(body):
 	if body == _player:
-		_player.kill()
+		_player.kill(_player.global_position - self.global_position)
 		abandon()

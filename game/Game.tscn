@@ -937,6 +937,7 @@ script = ExtResource( 14 )
 target = NodePath("../CameraTarget/Camera")
 
 [node name="Fingers" type="Node2D" parent="."]
+editor/display_folded = true
 position = Vector2( 304, 246 )
 script = ExtResource( 15 )
 target = NodePath("../CameraTarget/Camera")

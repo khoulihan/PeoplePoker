@@ -22,6 +22,7 @@ var _rolling : bool
 var _in_cover : bool = true
 var _falling : bool
 var _fall_motion : Vector2
+var _death_motion : Vector2
 
 onready var _input : InputController = $InputController
 
@@ -100,6 +101,13 @@ func _process(delta):
 	elif _falling:
 		_fall_motion.y += 10.0
 		self.position += _fall_motion * delta
+	else:
+		if _death_motion.length() > 0.5:
+			self.move_and_slide(_death_motion)
+			_death_motion = _death_motion * 0.9
+		else:
+			_death_motion = Vector2(0.0, 0.0)
+			self.position = Vector2(floor(self.position.x), floor(self.position.y))
 
 func get_stamina() -> float:
 	return _stamina
@@ -152,8 +160,10 @@ func position_prediction() -> Vector2:
 	#return self.position + (self._last_movement * walk_speed * (1.0/60.0) * 4.0)
 	return self.position + (self._last_actual_movement * 0.4)
 
-func kill():
+func kill(direction : Vector2) -> void:
 	_alive = false
+	print(direction)
+	_death_motion = (direction.normalized() + (_last_actual_movement.normalized() * 0.5)).normalized() * 200.0
 	$AnimationPlayer.play("Death")
 	emit_signal("killed")
 
