@@ -60,7 +60,7 @@ func reset() -> void:
 	_state = State.IDLE
 	$TargetDebug.disable()
 
-func _process(delta):
+func _physics_process(delta):
 	var global_pos = self.global_position
 	if _state == State.PURSUE:
 		_process_pursue(delta)
@@ -72,6 +72,9 @@ func _process(delta):
 		# TODO: Could cut out some work here by deativating once original position is reached
 		# Retreat
 		_process_retreat(delta)
+
+func _process(delta):
+	pass
 
 func _on_anticipation_complete():
 	_state = State.ATTACK

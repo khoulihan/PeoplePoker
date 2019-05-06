@@ -8,6 +8,7 @@ func follow(t) -> void:
 func _ready():
 	pass
 
-func _process(delta):
+func _physics_process(delta):
 	if _target != null:
-		self.position = _target.position
+		self.position = Vector2(round(_target.position.x), round(_target.position.y))
+

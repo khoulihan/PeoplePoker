@@ -88,7 +88,7 @@ func spawn_player():
 	_goal_reached = false
 	var spawn_point : Position2D = $SpawnPoints.get_child(randi() % $SpawnPoints.get_child_count())
 	_player = _player_scene.instance()
-	_player.position = spawn_point.position
+	_player.set_position(spawn_point.position)
 	_player.sex = randi() % 2
 	# TODO: Maybe vary these with difficulty/progress
 	_player.walk_speed = 100

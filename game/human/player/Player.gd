@@ -23,15 +23,16 @@ var _in_cover : bool = true
 var _falling : bool
 var _fall_motion : Vector2
 var _death_motion : Vector2
+var _true_position : Vector2
 
 onready var _input : InputController = $InputController
 
 func _ready():
 	_stamina = max_stamina
 
-# TODO: The movement stuff should maybe be in physics_process...
-func _process(delta):
+func _physics_process(delta):
 	var recharge_stamina = true
+	self.position = _true_position
 	if _alive and !_falling:
 		var requested_movement : Vector2 = Vector2(0,0)
 		var movement_input = _input.get_movement()
@@ -108,6 +109,16 @@ func _process(delta):
 		else:
 			_death_motion = Vector2(0.0, 0.0)
 			self.position = Vector2(floor(self.position.x), floor(self.position.y))
+	
+	_true_position = self.position
+
+# TODO: The movement stuff should maybe be in physics_process...
+func _process(delta):
+	self.position = Vector2(round(_true_position.x), round(_true_position.y))
+
+func set_position(p : Vector2) -> void:
+	_true_position = p
+	self.position = Vector2(round(_true_position.x), round(_true_position.y))
 
 func get_stamina() -> float:
 	return _stamina
