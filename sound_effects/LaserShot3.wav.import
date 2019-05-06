@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/LaserShot3.wav-1a1750a6fdf23e0438227dfd102d7fa5.sample"
+
+[deps]
+
+source_file="res://sound_effects/LaserShot3.wav"
+dest_files=[ "res://.import/LaserShot3.wav-1a1750a6fdf23e0438227dfd102d7fa5.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

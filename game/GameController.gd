@@ -137,10 +137,10 @@ func _on_Goal_body_entered(body, which):
 			self.add_child_below_node($YSort, _player)
 		elif which == "left":
 			self.add_child_below_node($YSort, _player)
-			fall_motion.x = -30
+			fall_motion.x = -90
 		elif which == "right":
 			self.add_child_below_node($YSort, _player)
-			fall_motion.x = 30
+			fall_motion.x = 90
 		_player.enter_fall_state(fall_motion)
 		$RespawnTimer.start()
 

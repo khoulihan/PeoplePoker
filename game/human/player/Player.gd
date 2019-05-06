@@ -186,3 +186,6 @@ func kill(direction : Vector2) -> void:
 
 func _on_RollTimer_timeout():
 	_rolling = false
+
+func _on_footstep():
+	$FootstepAudioStreamPlayer.play()

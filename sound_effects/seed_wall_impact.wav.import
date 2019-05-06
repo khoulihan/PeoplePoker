@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/seed_wall_impact.wav-68cf8d228fb0c6873142d386c92e7bcf.sample"
+
+[deps]
+
+source_file="res://sound_effects/seed_wall_impact.wav"
+dest_files=[ "res://.import/seed_wall_impact.wav-68cf8d228fb0c6873142d386c92e7bcf.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

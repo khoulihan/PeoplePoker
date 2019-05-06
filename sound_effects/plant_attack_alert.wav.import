@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/plant_attack_alert.wav-ff3b7874a4365474f00719830125ebbd.sample"
+
+[deps]
+
+source_file="res://sound_effects/plant_attack_alert.wav"
+dest_files=[ "res://.import/plant_attack_alert.wav-ff3b7874a4365474f00719830125ebbd.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

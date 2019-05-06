@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/water_fire_1.wav-ebc38c62ec199e6186753c7caa7f7cb2.sample"
+
+[deps]
+
+source_file="res://sound_effects/water_fire_1.wav"
+dest_files=[ "res://.import/water_fire_1.wav-ebc38c62ec199e6186753c7caa7f7cb2.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

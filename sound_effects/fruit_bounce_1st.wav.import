@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/fruit_bounce_1st.wav-91627b097e9390c0aadfca47bde3e5fb.sample"
+
+[deps]
+
+source_file="res://sound_effects/fruit_bounce_1st.wav"
+dest_files=[ "res://.import/fruit_bounce_1st.wav-91627b097e9390c0aadfca47bde3e5fb.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

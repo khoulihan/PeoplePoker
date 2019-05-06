@@ -1,9 +1,13 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://game/human/player/Player.gd" type="Script" id=1]
 [ext_resource path="res://game/human/HumanSpritesheetx32.png" type="Texture" id=2]
 [ext_resource path="res://game/human/HumanMaterial.tres" type="Material" id=3]
-[ext_resource path="res://game/human/player/InputController.gd" type="Script" id=4]
+[ext_resource path="res://sound_effects/seed_fire_1.wav" type="AudioStream" id=4]
+[ext_resource path="res://sound_effects/fruit_bounce_2nd.wav" type="AudioStream" id=5]
+[ext_resource path="res://game/human/player/InputController.gd" type="Script" id=6]
+[ext_resource path="res://sound_effects/footstep_wet_3.wav" type="AudioStream" id=7]
+[ext_resource path="res://sound_effects/footstep_3.wav" type="AudioStream" id=8]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 5.0
@@ -43,10 +47,24 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 0.15 ),
+"times": PoolRealArray( 0, 0.1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ true, false ]
+}
+tracks/3/type = "audio"
+tracks/3/path = NodePath("AudioStreamPlayer")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 4 )
+} ],
+"times": PoolRealArray( 0 )
 }
 
 [sub_resource type="Animation" id=2]
@@ -84,10 +102,24 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 0.15 ),
+"times": PoolRealArray( 0, 0.1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ true, false ]
+}
+tracks/3/type = "audio"
+tracks/3/path = NodePath("AudioStreamPlayer")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 4 )
+} ],
+"times": PoolRealArray( 0 )
 }
 
 [sub_resource type="Animation" id=3]
@@ -355,6 +387,20 @@ tracks/1/keys = {
 "update": 1,
 "values": [ 380, 381, 382, 383, 384 ]
 }
+tracks/2/type = "audio"
+tracks/2/path = NodePath("AudioStreamPlayer")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 5 )
+} ],
+"times": PoolRealArray( 0.1 )
+}
 
 [sub_resource type="Animation" id=12]
 resource_name = "RollFront"
@@ -384,6 +430,20 @@ tracks/1/keys = {
 "transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 360, 361, 362, 363, 364 ]
+}
+tracks/2/type = "audio"
+tracks/2/path = NodePath("AudioStreamPlayer")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 5 )
+} ],
+"times": PoolRealArray( 0.1 )
 }
 
 [sub_resource type="Animation" id=13]
@@ -415,6 +475,23 @@ tracks/1/keys = {
 "update": 1,
 "values": [ 300, 301, 302, 303 ]
 }
+tracks/2/type = "method"
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "_on_footstep"
+}, {
+"args": [  ],
+"method": "_on_footstep"
+} ]
+}
 
 [sub_resource type="Animation" id=14]
 resource_name = "RunFront"
@@ -444,6 +521,23 @@ tracks/1/keys = {
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 280, 281, 282, 283 ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "_on_footstep"
+}, {
+"args": [  ],
+"method": "_on_footstep"
+} ]
 }
 
 [sub_resource type="Animation" id=15]
@@ -475,6 +569,23 @@ tracks/1/keys = {
 "update": 1,
 "values": [ 220, 221, 222, 223 ]
 }
+tracks/2/type = "method"
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "_on_footstep"
+}, {
+"args": [  ],
+"method": "_on_footstep"
+} ]
+}
 
 [sub_resource type="Animation" id=16]
 resource_name = "WalkFront"
@@ -505,6 +616,23 @@ tracks/1/keys = {
 "update": 1,
 "values": [ 200, 201, 202, 203 ]
 }
+tracks/2/type = "method"
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "_on_footstep"
+}, {
+"args": [  ],
+"method": "_on_footstep"
+} ]
+}
 
 [node name="Human" type="KinematicBody2D"]
 script = ExtResource( 1 )
@@ -531,7 +659,7 @@ centered = false
 offset = Vector2( -16, -28 )
 vframes = 20
 hframes = 20
-frame = 344
+frame = 162
 
 [node name="Female" type="Sprite" parent="."]
 material = ExtResource( 3 )
@@ -540,7 +668,7 @@ centered = false
 offset = Vector2( -16, -28 )
 vframes = 20
 hframes = 20
-frame = 385
+frame = 202
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/DeathBack = SubResource( 17 )
@@ -561,10 +689,20 @@ anims/WalkBack = SubResource( 15 )
 anims/WalkFront = SubResource( 16 )
 
 [node name="InputController" type="Node" parent="."]
-script = ExtResource( 4 )
+script = ExtResource( 6 )
 
 [node name="RollTimer" type="Timer" parent="."]
 wait_time = 0.4
 one_shot = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+bus = "SFX"
+
+[node name="FootstepAudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+volume_db = -9.0
+pitch_scale = 0.8
+bus = "SFX"
 
 [connection signal="timeout" from="RollTimer" to="." method="_on_RollTimer_timeout"]
