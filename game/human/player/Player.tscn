@@ -12,7 +12,7 @@
 [sub_resource type="CircleShape2D" id=1]
 radius = 5.0
 
-[sub_resource type="Animation" id=17]
+[sub_resource type="Animation" id=2]
 resource_name = "DeathBack"
 length = 0.8
 step = 0.05
@@ -67,8 +67,7 @@ tracks/3/keys = {
 "times": PoolRealArray( 0 )
 }
 
-[sub_resource type="Animation" id=2]
-resource_name = "DeathFront"
+[sub_resource type="Animation" id=3]
 length = 0.8
 step = 0.05
 tracks/0/type = "value"
@@ -122,8 +121,7 @@ tracks/3/keys = {
 "times": PoolRealArray( 0 )
 }
 
-[sub_resource type="Animation" id=3]
-resource_name = "IdleCoverBack"
+[sub_resource type="Animation" id=4]
 length = 0.6
 loop = true
 step = 0.15
@@ -152,8 +150,7 @@ tracks/1/keys = {
 "values": [ 140, 141, 142, 143 ]
 }
 
-[sub_resource type="Animation" id=4]
-resource_name = "IdleCoverFront"
+[sub_resource type="Animation" id=5]
 length = 0.6
 loop = true
 step = 0.15
@@ -182,8 +179,7 @@ tracks/1/keys = {
 "values": [ 120, 121, 122, 123 ]
 }
 
-[sub_resource type="Animation" id=5]
-resource_name = "IdleOpenBack"
+[sub_resource type="Animation" id=6]
 length = 0.8
 loop = true
 step = 0.2
@@ -212,8 +208,7 @@ tracks/1/keys = {
 "values": [ 60, 61, 62, 63 ]
 }
 
-[sub_resource type="Animation" id=6]
-resource_name = "IdleOpenFront"
+[sub_resource type="Animation" id=7]
 length = 0.8
 loop = true
 step = 0.2
@@ -242,8 +237,7 @@ tracks/1/keys = {
 "values": [ 40, 41, 42, 43 ]
 }
 
-[sub_resource type="Animation" id=7]
-resource_name = "IdlePenBack"
+[sub_resource type="Animation" id=8]
 length = 0.8
 step = 0.2
 tracks/0/type = "value"
@@ -271,8 +265,7 @@ tracks/1/keys = {
 "values": [ 230, 231, 232, 233 ]
 }
 
-[sub_resource type="Animation" id=8]
-resource_name = "IdlePenFront"
+[sub_resource type="Animation" id=9]
 length = 0.8
 step = 0.2
 tracks/0/type = "value"
@@ -300,8 +293,7 @@ tracks/1/keys = {
 "values": [ 210, 211, 212, 213 ]
 }
 
-[sub_resource type="Animation" id=9]
-resource_name = "JumpBack"
+[sub_resource type="Animation" id=10]
 length = 0.8
 step = 0.05
 tracks/0/type = "value"
@@ -329,8 +321,7 @@ tracks/1/keys = {
 "values": [ 150, 151, 152, 153 ]
 }
 
-[sub_resource type="Animation" id=10]
-resource_name = "JumpFront"
+[sub_resource type="Animation" id=11]
 length = 0.8
 step = 0.05
 tracks/0/type = "value"
@@ -358,8 +349,7 @@ tracks/1/keys = {
 "values": [ 130, 131, 132, 133 ]
 }
 
-[sub_resource type="Animation" id=11]
-resource_name = "RollBack"
+[sub_resource type="Animation" id=12]
 length = 0.4
 loop = true
 step = 0.05
@@ -402,8 +392,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0.1 )
 }
 
-[sub_resource type="Animation" id=12]
-resource_name = "RollFront"
+[sub_resource type="Animation" id=13]
 length = 0.4
 loop = true
 step = 0.05
@@ -446,8 +435,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0.1 )
 }
 
-[sub_resource type="Animation" id=13]
-resource_name = "RunBack"
+[sub_resource type="Animation" id=14]
 length = 0.6
 loop = true
 step = 0.15
@@ -493,8 +481,7 @@ tracks/2/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=14]
-resource_name = "RunFront"
+[sub_resource type="Animation" id=15]
 length = 0.6
 loop = true
 step = 0.15
@@ -540,8 +527,7 @@ tracks/2/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=15]
-resource_name = "WalkBack"
+[sub_resource type="Animation" id=16]
 length = 0.8
 loop = true
 step = 0.2
@@ -587,8 +573,7 @@ tracks/2/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=16]
-resource_name = "WalkFront"
+[sub_resource type="Animation" id=17]
 length = 0.8
 loop = true
 step = 0.2
@@ -671,22 +656,22 @@ hframes = 20
 frame = 202
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/DeathBack = SubResource( 17 )
-anims/DeathFront = SubResource( 2 )
-anims/IdleCoverBack = SubResource( 3 )
-anims/IdleCoverFront = SubResource( 4 )
-anims/IdleOpenBack = SubResource( 5 )
-anims/IdleOpenFront = SubResource( 6 )
-anims/IdlePenBack = SubResource( 7 )
-anims/IdlePenFront = SubResource( 8 )
-anims/JumpBack = SubResource( 9 )
-anims/JumpFront = SubResource( 10 )
-anims/RollBack = SubResource( 11 )
-anims/RollFront = SubResource( 12 )
-anims/RunBack = SubResource( 13 )
-anims/RunFront = SubResource( 14 )
-anims/WalkBack = SubResource( 15 )
-anims/WalkFront = SubResource( 16 )
+anims/DeathBack = SubResource( 2 )
+anims/DeathFront = SubResource( 3 )
+anims/IdleCoverBack = SubResource( 4 )
+anims/IdleCoverFront = SubResource( 5 )
+anims/IdleOpenBack = SubResource( 6 )
+anims/IdleOpenFront = SubResource( 7 )
+anims/IdlePenBack = SubResource( 8 )
+anims/IdlePenFront = SubResource( 9 )
+anims/JumpBack = SubResource( 10 )
+anims/JumpFront = SubResource( 11 )
+anims/RollBack = SubResource( 12 )
+anims/RollFront = SubResource( 13 )
+anims/RunBack = SubResource( 14 )
+anims/RunFront = SubResource( 15 )
+anims/WalkBack = SubResource( 16 )
+anims/WalkFront = SubResource( 17 )
 
 [node name="InputController" type="Node" parent="."]
 script = ExtResource( 6 )

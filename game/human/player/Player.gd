@@ -23,6 +23,8 @@ var _in_cover : bool = true
 var _falling : bool
 var _fall_motion : Vector2
 var _death_motion : Vector2
+var _death_facing_back : bool
+var _death_flip : bool
 var _true_position : Vector2
 
 onready var _input : InputController = $InputController
@@ -126,6 +128,12 @@ func get_stamina() -> float:
 func is_alive() -> bool:
 	return _alive
 
+func is_death_facing_back() -> bool:
+	return _death_facing_back
+
+func is_death_flip() -> bool:
+	return _death_flip
+
 func _idle_animation(movement) -> String:
 	if _facing_front(movement):
 		return "IdleCoverFront" if _in_cover else "IdleOpenFront"
@@ -178,10 +186,12 @@ func kill(direction : Vector2) -> void:
 	_alive = false
 	print(direction)
 	_death_motion = (direction.normalized() + (_last_actual_movement.normalized() * 0.5)).normalized() * 200.0
-	if _facing_front(_death_motion):
-		$AnimationPlayer.play("DeathFront")
-	else:
+	_death_facing_back = !_facing_front(_death_motion)
+	_death_flip = _facing_left(_last_actual_movement)
+	if _death_facing_back:
 		$AnimationPlayer.play("DeathBack")
+	else:
+		$AnimationPlayer.play("DeathFront")
 	emit_signal("killed")
 
 func _on_RollTimer_timeout():

@@ -16,17 +16,20 @@ var _back : bool
 var _player
 var _speaking : bool = false
 
+var skin
+
 func _ready():
 	_phrases = phrases.split("\n")
 
 
 func configure(player):
 	_player = player
-	var skin = randi() % 3
+	self.skin = randi() % 3
 	_back = (randi() % 2 == 0)
 	var flip = (randi() % 2 == 0)
 	
 	# TODO: Duplicating the materials probably only needs to be done the first time
+	# TODO: I'd imagine this could be optimised by creating one material for each skintone as well...
 	if self.sex == 0:
 		$Female.visible = false
 		$Male.visible = true

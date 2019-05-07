@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://game/GameController.gd" type="Script" id=1]
 [ext_resource path="res://music/PeoplePokerTechno.wav" type="AudioStream" id=2]
@@ -19,9 +19,8 @@
 [ext_resource path="res://game/finger/ReverseHorizontalFinger.tscn" type="PackedScene" id=17]
 [ext_resource path="res://game/finger/VerticalFinger.tscn" type="PackedScene" id=18]
 [ext_resource path="res://game/finger/ReverseVerticalFinger.tscn" type="PackedScene" id=19]
-[ext_resource path="res://game/finger/Finger.gd" type="Script" id=20]
-[ext_resource path="res://game/ui/HUD.tscn" type="PackedScene" id=21]
-[ext_resource path="res://game/goal.wav" type="AudioStream" id=22]
+[ext_resource path="res://game/ui/HUD.tscn" type="PackedScene" id=20]
+[ext_resource path="res://game/goal.wav" type="AudioStream" id=21]
 
 [sub_resource type="TileSet" id=1]
 0/name = "BasicFloor"
@@ -966,22 +965,20 @@ attack_speed = 400.0
 
 [node name="Finger5" parent="Fingers" instance=ExtResource( 19 )]
 position = Vector2( -68, -150 )
-script = ExtResource( 20 )
 pursue_speed = 40.0
 retreat_speed = 35.0
 attack_speed = 400.0
 
 [node name="Finger6" parent="Fingers" instance=ExtResource( 19 )]
 position = Vector2( 63, -149 )
-script = ExtResource( 20 )
 pursue_speed = 40.0
 retreat_speed = 35.0
 attack_speed = 400.0
 
-[node name="HUD" parent="." instance=ExtResource( 21 )]
+[node name="HUD" parent="." instance=ExtResource( 20 )]
 
 [node name="GoalSoundPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 22 )
+stream = ExtResource( 21 )
 bus = "SFX"
 
 [node name="SpeechBubbles" type="YSort" parent="."]

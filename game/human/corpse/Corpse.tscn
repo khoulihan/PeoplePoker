@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://game/human/HumanMaterial.tres" type="Material" id=1]
+[ext_resource path="res://game/human/HumanSpritesheetx32.png" type="Texture" id=2]
+[ext_resource path="res://game/human/corpse/Corpse.gd" type="Script" id=3]
+
+[node name="Corpse" type="Sprite"]
+material = ExtResource( 1 )
+texture = ExtResource( 2 )
+vframes = 20
+hframes = 20
+frame = 13
+script = ExtResource( 3 )
+

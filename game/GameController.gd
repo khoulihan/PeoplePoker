@@ -6,6 +6,7 @@ signal rescued_updated (new_total)
 signal player_spawned (new_player)
 
 var _player_scene = preload("res://game/human/player/Player.tscn")
+var _corpse_scene = preload("res://game/human/corpse/Corpse.tscn")
 var _speech_bubble_scene = preload("res://game/ui/speech_bubble/SpeechBubble.tscn")
 
 var _player : Player
@@ -84,6 +85,10 @@ func _on_Finger_attack_complete(finger):
 func spawn_player():
 	if _player:
 		_player.get_parent().remove_child(_player)
+		var corpse = _corpse_scene.instance()
+		corpse.configure(_player)
+		corpse.position = _player.position
+		$YSort.add_child(corpse)
 		_player = null
 	_goal_reached = false
 	var spawn_point : Position2D = $SpawnPoints.get_child(randi() % $SpawnPoints.get_child_count())
