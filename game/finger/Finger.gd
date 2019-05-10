@@ -77,6 +77,8 @@ func _process(delta):
 	pass
 
 func _on_anticipation_complete():
+	#_attack_position = _player.position_prediction()
+	#$TargetDebug.set_target(_attack_position)
 	_state = State.ATTACK
 
 func _process_pursue(delta):

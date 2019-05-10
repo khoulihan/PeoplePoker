@@ -2,6 +2,8 @@ extends Node2D
 
 const Player = preload("res://game/human/player/Player.gd")
 
+const DEBUG = true
+
 signal rescued_updated (new_total)
 signal player_spawned (new_player)
 
@@ -48,6 +50,7 @@ func _restart_game():
 	FadeMask.fade_out()
 
 func _configure_level():
+	adjust_finger_difficulty()
 	if _rescued < 2:
 		enable_all($YSort/Level1Cover)
 		enable_all($YSort/Level2Cover)
@@ -67,6 +70,18 @@ func enable_all(node):
 func disable_all(node):
 	for n in node.get_children():
 		n.disable()
+
+func adjust_finger_difficulty():
+	_fingers = $Fingers.get_children()
+	for finger in _fingers:
+		if _rescued < 2:
+			finger.pursue_speed = 50.0
+		elif _rescued < 4:
+			finger.pursue_speed = 55.0
+		elif _rescued < 6:
+			finger.pursue_speed = 60.0
+		elif _rescued < 8:
+			finger.pursue_speed = 65.0
 
 func _populate_finger_array():
 	_fingers = $Fingers.get_children()
@@ -183,3 +198,8 @@ func _player_killed() -> void:
 
 func _on_RespawnTimer_timeout():
 	FadeMask.fade_in()
+
+func _process(delta):
+	if Input.is_action_just_pressed("increase_rescued") and DEBUG:
+		_rescued += 1
+		_configure_level()
