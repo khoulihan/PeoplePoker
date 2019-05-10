@@ -1,6 +1,7 @@
 extends Camera2D
 
 var _target : Node2D
+onready var _camera = get_node("Camera")
 
 func _ready():
 	pass
