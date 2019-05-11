@@ -23,6 +23,7 @@ func _ready():
 	randomize()
 	WindowController.resize_window()
 	WindowController.set_aspect_for_game()
+	_configure_level()
 	_populate_finger_array()
 	for human in $YSort/Humans.get_children():
 		human.connect("speak", self, "_human_speak", [human])
@@ -53,15 +54,32 @@ func _configure_level():
 	adjust_finger_difficulty()
 	if _rescued < 2:
 		enable_all($YSort/Level1Cover)
-		enable_all($YSort/Level2Cover)
-		enable_all($YSort/Level3Cover)
-		enable_all($YSort/Level4Cover)
+		enable_all($YSort/Level1Obstacles)
+		disable_all($YSort/Level2Cover)
+		disable_all($YSort/Level2Obstacles)
+		disable_all($YSort/Level3Cover)
+		disable_all($YSort/Level4Cover)
 	elif _rescued < 4:
 		disable_all($YSort/Level1Cover)
-	elif _rescued < 6:
-		disable_all($YSort/Level2Cover)
-	elif _rescued < 8:
+		disable_all($YSort/Level1Obstacles)
+		enable_all($YSort/Level2Cover)
+		enable_all($YSort/Level2Obstacles)
 		disable_all($YSort/Level3Cover)
+		disable_all($YSort/Level4Cover)
+	elif _rescued < 6:
+		disable_all($YSort/Level1Cover)
+		disable_all($YSort/Level1Obstacles)
+		disable_all($YSort/Level2Cover)
+		disable_all($YSort/Level2Obstacles)
+		enable_all($YSort/Level3Cover)
+		disable_all($YSort/Level4Cover)
+	elif _rescued < 8:
+		disable_all($YSort/Level1Cover)
+		disable_all($YSort/Level1Obstacles)
+		disable_all($YSort/Level2Cover)
+		disable_all($YSort/Level2Obstacles)
+		disable_all($YSort/Level3Cover)
+		enable_all($YSort/Level4Cover)
 
 func enable_all(node):
 	for n in node.get_children():
@@ -79,9 +97,9 @@ func adjust_finger_difficulty():
 		elif _rescued < 4:
 			finger.pursue_speed = 55.0
 		elif _rescued < 6:
-			finger.pursue_speed = 60.0
+			finger.pursue_speed = 57.0
 		elif _rescued < 8:
-			finger.pursue_speed = 65.0
+			finger.pursue_speed = 58.0
 
 func _populate_finger_array():
 	_fingers = $Fingers.get_children()

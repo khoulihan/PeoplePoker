@@ -81,6 +81,9 @@ func _on_anticipation_complete():
 	#$TargetDebug.set_target(_attack_position)
 	_state = State.ATTACK
 
+func _player_position_prediction() -> Vector2:
+	return _player.position + (_player.get_last_actual_movement().normalized() * _player.walk_speed * 0.4)
+
 func _process_pursue(delta):
 	# Pursue / attack
 	var pursue_vector : Vector2 = (_player.global_position - self.global_position)
@@ -91,7 +94,7 @@ func _process_pursue(delta):
 	else:
 		_state = State.ANTICIPATE
 		# Not sure if here or after anticipation is best spot to set target
-		_attack_position = _player.position_prediction()
+		_attack_position = _player_position_prediction() #_player.position_prediction()
 		$TargetDebug.set_target(_attack_position)
 		$AnimationPlayer.play("Attack")
 
