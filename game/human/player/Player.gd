@@ -9,6 +9,8 @@ export(float) var stamina_recharge
 
 signal entered_cover
 signal exited_cover
+signal entered_drop_zone
+signal exited_drop_zone
 signal killed
 
 var _alive : bool = true
@@ -20,6 +22,7 @@ var _was_running : bool
 var _roll_vector : Vector2
 var _rolling : bool
 var _in_cover : bool = true
+var _in_drop_zone : bool = false
 var _falling : bool
 var _fall_motion : Vector2
 var _death_motion : Vector2
@@ -111,6 +114,7 @@ func _physics_process(delta):
 		else:
 			_death_motion = Vector2(0.0, 0.0)
 			self.position = Vector2(floor(self.position.x), floor(self.position.y))
+	_input.reset_roll()
 	
 	_true_position = self.position
 
@@ -127,6 +131,12 @@ func get_stamina() -> float:
 
 func is_alive() -> bool:
 	return _alive
+
+func is_in_cover() -> bool:
+	return _in_cover
+
+func is_in_drop_zone() -> bool:
+	return _in_drop_zone
 
 func is_death_facing_back() -> bool:
 	return _death_facing_back
@@ -163,6 +173,14 @@ func enter_cover() -> void:
 func exit_cover() -> void:
 	_in_cover = false
 	emit_signal("exited_cover")
+
+func enter_drop_zone() -> void:
+	_in_drop_zone = true
+	emit_signal("entered_drop_zone")
+
+func exit_drop_zone() -> void:
+	_in_drop_zone = false
+	emit_signal("exited_drop_zone")
 
 func disable_collider() -> void:
 	$CollisionShape2D.disabled = true

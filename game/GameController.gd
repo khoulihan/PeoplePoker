@@ -2,6 +2,7 @@ extends Node2D
 
 const Player = preload("res://game/human/player/Player.gd")
 
+
 const DEBUG = true
 
 signal rescued_updated (new_total)
@@ -10,10 +11,13 @@ signal player_spawned (new_player)
 var _player_scene = preload("res://game/human/player/Player.tscn")
 var _corpse_scene = preload("res://game/human/corpse/Corpse.tscn")
 var _speech_bubble_scene = preload("res://game/ui/speech_bubble/SpeechBubble.tscn")
+var _drop_effect_scene = preload("res://game/drop_zone/DropEffect.tscn")
+var _cover_object_scene = preload("res://game/cover/CardsCoverObject.tscn")
 
 var _player : Player
 var _goal_reached : bool = false
 var _player_killed : bool = false
+var _current_drop_effect = null
 
 var _fingers : Array = []
 
@@ -80,6 +84,11 @@ func _configure_level():
 		disable_all($YSort/Level2Obstacles)
 		disable_all($YSort/Level3Cover)
 		enable_all($YSort/Level4Cover)
+	
+	# Clear dropped objects
+	for cover in $YSort/DroppedCover.get_children():
+		$YSort/DroppedCover.remove_child(cover)
+		cover.queue_free()
 
 func enable_all(node):
 	for n in node.get_children():
@@ -190,9 +199,14 @@ func disconnect_player_signals():
 func connect_player_signals():
 	_player.connect("entered_cover", self, "_player_entered_cover")
 	_player.connect("exited_cover", self, "_player_exited_cover")
+	_player.connect("entered_drop_zone", self, "_player_entered_drop_zone")
+	_player.connect("exited_drop_zone", self, "_player_exited_drop_zone")
 	_player.connect("killed", self, "_player_killed")
 
 func _player_entered_cover() -> void:
+	_abandon_all_pursuits()
+
+func _player_entered_drop_zone() -> void:
 	_abandon_all_pursuits()
 
 func _abandon_all_pursuits() -> void:
@@ -204,6 +218,13 @@ func _reset_all_fingers() -> void:
 		finger.reset()
 
 func _player_exited_cover() -> void:
+	# TODO: Might want to wait before activating a finger, but for now just doing it straight away
+	# TODO: Need to make sure player is not in drop zone
+	if !_player.is_in_drop_zone():
+		var finger = _fingers[randi() % len(_fingers)]
+		finger.pursue(_player)
+
+func _player_exited_drop_zone() -> void:
 	# TODO: Might want to wait before activating a finger, but for now just doing it straight away
 	var finger = _fingers[randi() % len(_fingers)]
 	finger.pursue(_player)
@@ -222,3 +243,42 @@ func _process(delta):
 	if Input.is_action_just_pressed("increase_rescued") and DEBUG:
 		_rescued += 1
 		_configure_level()
+
+
+func _on_DropZone_drop_updated(pos, height):
+	# Update the drop shadow to the specified position and height.
+	# If a terminal drop is in progress then update that as well.
+	$YSort/DropShadow.centre_on_position(pos, height)
+	if _current_drop_effect != null:
+		_current_drop_effect.position = $YSort/DropShadow.position
+		_current_drop_effect.set_height(height)
+
+
+func _on_DropZone_drop_completed(pos):
+	# Kill player if they are within range of the drop position
+	var player_vector = _player.position - pos
+	if player_vector.length() < 40.0:
+		_player.kill(player_vector)
+	# Spawn cover object at position and hide shadow and drop object
+	var cover_obj = _cover_object_scene.instance()
+	cover_obj.position = Vector2(pos.x, pos.y - 36) # Magic number adjusts for offset of card cover object, to make it seem centred where the shadow was
+	$YSort/DroppedCover.add_child(cover_obj)
+	$YSort/DropShadow.hide()
+	if _current_drop_effect != null:
+		$YSort/DroppedCover.remove_child(_current_drop_effect)
+		_current_drop_effect.queue_free()
+		_current_drop_effect = null
+	# Screen shake
+	$CameraTarget.shake(0.2)
+	# Play sound effect
+	$DropSoundPlayer.play()
+	
+	
+
+
+func _on_DropZone_terminal_drop_initiated(pos, height):
+	# Spawn or update terminal drop object
+	_current_drop_effect = _drop_effect_scene.instance()
+	$YSort/DroppedCover.add_child(_current_drop_effect)
+	_current_drop_effect.position = pos
+	_current_drop_effect.set_height(height)

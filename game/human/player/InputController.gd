@@ -16,6 +16,9 @@ func get_run() -> bool:
 func get_roll() -> bool:
 	return _roll
 
+func reset_roll() -> void:
+	_roll = false
+
 func _process(delta):
 	if Input.is_action_pressed("move_left") or Input.is_action_pressed("move_right"):
 		_movement_vector.x = 1.0
@@ -32,4 +35,4 @@ func _process(delta):
 		_movement_vector.y = 0.0
 	
 	_run = Input.is_action_pressed("run")
-	_roll = Input.is_action_just_pressed("roll")
+	_roll = _roll or Input.is_action_just_pressed("roll")
