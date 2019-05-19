@@ -62,6 +62,7 @@ func _configure_level():
 		disable_all($YSort/Level2Cover)
 		disable_all($YSort/Level2Obstacles)
 		disable_all($YSort/Level3Cover)
+		disable_all($YSort/Level3Obstacles)
 		disable_all($YSort/Level4Cover)
 	elif _rescued < 4:
 		disable_all($YSort/Level1Cover)
@@ -69,6 +70,7 @@ func _configure_level():
 		enable_all($YSort/Level2Cover)
 		enable_all($YSort/Level2Obstacles)
 		disable_all($YSort/Level3Cover)
+		disable_all($YSort/Level3Obstacles)
 		disable_all($YSort/Level4Cover)
 	elif _rescued < 6:
 		disable_all($YSort/Level1Cover)
@@ -76,6 +78,7 @@ func _configure_level():
 		disable_all($YSort/Level2Cover)
 		disable_all($YSort/Level2Obstacles)
 		enable_all($YSort/Level3Cover)
+		enable_all($YSort/Level3Obstacles)
 		disable_all($YSort/Level4Cover)
 	elif _rescued < 8:
 		disable_all($YSort/Level1Cover)
@@ -83,6 +86,7 @@ func _configure_level():
 		disable_all($YSort/Level2Cover)
 		disable_all($YSort/Level2Obstacles)
 		disable_all($YSort/Level3Cover)
+		disable_all($YSort/Level3Obstacles)
 		enable_all($YSort/Level4Cover)
 	
 	# Clear dropped objects
