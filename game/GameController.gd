@@ -209,9 +209,12 @@ func connect_player_signals():
 
 func _player_entered_cover() -> void:
 	_abandon_all_pursuits()
+	$YSort/DropShadow.set_target(null)
 
 func _player_entered_drop_zone() -> void:
 	_abandon_all_pursuits()
+	if !_player.is_in_cover():
+		$YSort/DropShadow.set_target(_player)
 
 func _abandon_all_pursuits() -> void:
 	for finger in _fingers:
@@ -224,17 +227,23 @@ func _reset_all_fingers() -> void:
 func _player_exited_cover() -> void:
 	# TODO: Might want to wait before activating a finger, but for now just doing it straight away
 	# TODO: Need to make sure player is not in drop zone
-	if !_player.is_in_drop_zone():
+	if !_player.is_in_drop_zone() and !_player.is_in_cover():
 		var finger = _fingers[randi() % len(_fingers)]
 		finger.pursue(_player)
+	if _player.is_in_drop_zone():
+		$YSort/DropShadow.set_target(_player)
 
 func _player_exited_drop_zone() -> void:
 	# TODO: Might want to wait before activating a finger, but for now just doing it straight away
-	var finger = _fingers[randi() % len(_fingers)]
-	finger.pursue(_player)
+	if !_player.is_in_drop_zone() and !_player.is_in_cover():
+		var finger = _fingers[randi() % len(_fingers)]
+		finger.pursue(_player)
+	if !_player.is_in_drop_zone():
+		$YSort/DropShadow.set_target(null)
 
 func _player_killed() -> void:
 	_abandon_all_pursuits()
+	$YSort/DropShadow.set_target(null)
 	_player_killed = true
 	$CameraTarget.follow(null)
 	$CameraTarget.shake(0.2)
@@ -249,16 +258,16 @@ func _process(delta):
 		_configure_level()
 
 
-func _on_DropZone_drop_updated(pos, height):
+func _on_DropShadow_drop_updated(pos, height):
 	# Update the drop shadow to the specified position and height.
 	# If a terminal drop is in progress then update that as well.
-	$YSort/DropShadow.centre_on_position(pos, height)
+	#$YSort/DropShadow.centre_on_position(pos, height)
 	if _current_drop_effect != null:
 		_current_drop_effect.position = $YSort/DropShadow.position
 		_current_drop_effect.set_height(height)
 
 
-func _on_DropZone_drop_completed(pos):
+func _on_DropShadow_drop_completed(pos):
 	# Kill player if they are within range of the drop position
 	var player_vector = _player.position - pos
 	if player_vector.length() < 40.0:
@@ -280,7 +289,7 @@ func _on_DropZone_drop_completed(pos):
 	
 
 
-func _on_DropZone_terminal_drop_initiated(pos, height):
+func _on_DropShadow_terminal_drop_initiated(pos, height):
 	# Spawn or update terminal drop object
 	_current_drop_effect = _drop_effect_scene.instance()
 	$YSort/DroppedCover.add_child(_current_drop_effect)

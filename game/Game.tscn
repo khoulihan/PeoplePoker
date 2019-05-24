@@ -1128,25 +1128,25 @@ editor/display_folded = true
 position = Vector2( 622, 991 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="YSort/Level3Cover/DropZone"]
-polygon = PoolVector2Array( 349, -129, 347, 133, 24, 580, -219, 347, -213, -283, -28, -438 )
+polygon = PoolVector2Array( 347, -180, 348, 178, 67, 590, -219, 347, -213, -283, 2, -459 )
 
 [node name="DropZone2" parent="YSort/Level3Cover" instance=ExtResource( 12 )]
 position = Vector2( 1169, 664 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="YSort/Level3Cover/DropZone2"]
-polygon = PoolVector2Array( -198, 195, -569, -109, -394, -267, 510, -271, 660, -127, 216, 193 )
+polygon = PoolVector2Array( -238, 194, -582, -99, -394, -267, 510, -271, 677, -93, 256, 191 )
 
 [node name="DropZone3" parent="YSort/Level3Cover" instance=ExtResource( 12 )]
 position = Vector2( 1711, 983 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="YSort/Level3Cover/DropZone3"]
-polygon = PoolVector2Array( -323, -119, 124, -446, 223, -300, 225, 423, 77, 557, -328, 142 )
+polygon = PoolVector2Array( -324, -170, 89, -468, 223, -300, 225, 423, 59, 569, -324, 173 )
 
 [node name="DropZone4" parent="YSort/Level3Cover" instance=ExtResource( 12 )]
 position = Vector2( 1190, 1381 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="YSort/Level3Cover/DropZone4"]
-polygon = PoolVector2Array( 193, -250, 600, 159, 430, 307, -328, 315, -538, 190, -218, -252 )
+polygon = PoolVector2Array( 238, -253, 625, 131, 430, 307, -328, 315, -560, 158, -263, -253 )
 
 [node name="DrinkCoverObject" parent="YSort/Level3Cover" instance=ExtResource( 10 )]
 position = Vector2( 1383, 1004 )
@@ -1367,18 +1367,9 @@ bus = "SFX"
 
 [connection signal="player_spawned" from="." to="HUD" method="_on_Game_player_spawned"]
 [connection signal="rescued_updated" from="." to="HUD" method="_on_Game_rescued_updated"]
-[connection signal="drop_completed" from="YSort/Level3Cover/DropZone" to="." method="_on_DropZone_drop_completed"]
-[connection signal="drop_updated" from="YSort/Level3Cover/DropZone" to="." method="_on_DropZone_drop_updated"]
-[connection signal="terminal_drop_initiated" from="YSort/Level3Cover/DropZone" to="." method="_on_DropZone_terminal_drop_initiated"]
-[connection signal="drop_completed" from="YSort/Level3Cover/DropZone2" to="." method="_on_DropZone_drop_completed"]
-[connection signal="drop_updated" from="YSort/Level3Cover/DropZone2" to="." method="_on_DropZone_drop_updated"]
-[connection signal="terminal_drop_initiated" from="YSort/Level3Cover/DropZone2" to="." method="_on_DropZone_terminal_drop_initiated"]
-[connection signal="drop_completed" from="YSort/Level3Cover/DropZone3" to="." method="_on_DropZone_drop_completed"]
-[connection signal="drop_updated" from="YSort/Level3Cover/DropZone3" to="." method="_on_DropZone_drop_updated"]
-[connection signal="terminal_drop_initiated" from="YSort/Level3Cover/DropZone3" to="." method="_on_DropZone_terminal_drop_initiated"]
-[connection signal="drop_completed" from="YSort/Level3Cover/DropZone4" to="." method="_on_DropZone_drop_completed"]
-[connection signal="drop_updated" from="YSort/Level3Cover/DropZone4" to="." method="_on_DropZone_drop_updated"]
-[connection signal="terminal_drop_initiated" from="YSort/Level3Cover/DropZone4" to="." method="_on_DropZone_terminal_drop_initiated"]
+[connection signal="drop_completed" from="YSort/DropShadow" to="." method="_on_DropShadow_drop_completed"]
+[connection signal="drop_updated" from="YSort/DropShadow" to="." method="_on_DropShadow_drop_updated"]
+[connection signal="terminal_drop_initiated" from="YSort/DropShadow" to="." method="_on_DropShadow_terminal_drop_initiated"]
 [connection signal="body_entered" from="Goals/TopGoal" to="." method="_on_Goal_body_entered" binds= [ "top" ]]
 [connection signal="body_entered" from="Goals/BottomGoal" to="." method="_on_Goal_body_entered" binds= [ "bottom" ]]
 [connection signal="body_entered" from="Goals/LeftGoal" to="." method="_on_Goal_body_entered" binds= [ "left" ]]

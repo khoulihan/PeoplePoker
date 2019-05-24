@@ -21,7 +21,9 @@ var _last_actual_movement : Vector2
 var _was_running : bool
 var _roll_vector : Vector2
 var _rolling : bool
+var _cover_count : int = 0
 var _in_cover : bool = true
+var _drop_zone_count : int = 0
 var _in_drop_zone : bool = false
 var _falling : bool
 var _fall_motion : Vector2
@@ -133,10 +135,10 @@ func is_alive() -> bool:
 	return _alive
 
 func is_in_cover() -> bool:
-	return _in_cover
+	return _cover_count > 0
 
 func is_in_drop_zone() -> bool:
-	return _in_drop_zone
+	return _drop_zone_count > 0
 
 func is_death_facing_back() -> bool:
 	return _death_facing_back
@@ -146,9 +148,9 @@ func is_death_flip() -> bool:
 
 func _idle_animation(movement) -> String:
 	if _facing_front(movement):
-		return "IdleCoverFront" if _in_cover else "IdleOpenFront"
+		return "IdleCoverFront" if self.is_in_cover() else "IdleOpenFront"
 	else:
-		return "IdleCoverBack" if _in_cover else "IdleOpenBack"
+		return "IdleCoverBack" if self.is_in_cover() else "IdleOpenBack"
 
 func _can_run() -> bool:
 	if _was_running and _stamina > 0.0:
@@ -167,19 +169,23 @@ func _set_flip_h(f) -> void:
 	$Female.flip_h = f
 
 func enter_cover() -> void:
-	_in_cover = true
+	#_in_cover = true
+	_cover_count += 1
 	emit_signal("entered_cover")
 
 func exit_cover() -> void:
-	_in_cover = false
+	#_in_cover = false
+	_cover_count -= 1
 	emit_signal("exited_cover")
 
 func enter_drop_zone() -> void:
-	_in_drop_zone = true
+	#_in_drop_zone = true
+	_drop_zone_count += 1
 	emit_signal("entered_drop_zone")
 
 func exit_drop_zone() -> void:
-	_in_drop_zone = false
+	#_in_drop_zone = false
+	_drop_zone_count -= 1
 	emit_signal("exited_drop_zone")
 
 func disable_collider() -> void:
